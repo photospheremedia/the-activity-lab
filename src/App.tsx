@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -13,10 +13,6 @@ import { ExperienceModal } from './components/ExperienceModal'
 import { SectionLink } from './components/SectionLink'
 
 gsap.registerPlugin(ScrollTrigger)
-
-import { PUBLIC_CONTACT_EMAIL, submitContactForm } from './lib/contact'
-
-type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 function PlanTripButton({
   className,
@@ -109,12 +105,6 @@ const PROFESSIONAL_PRIORITIES = [
     title: 'Transparent trip scope',
     detail: 'Visible inclusions, activity intensity, and realistic seasonal guidance.',
   },
-]
-
-const TRUST_SIGNALS = [
-  'Response within 1 business day',
-  'Small groups, typically 6-12 travelers',
-  'Transparent planning and inclusions',
 ]
 
 const JOURNEY_STEPS = [
@@ -1380,150 +1370,6 @@ function Testimonial() {
   )
 }
 
-function Contact() {
-  const { t } = useI18n()
-  const [status, setStatus] = useState<FormStatus>('idle')
-
-  useEffect(() => {
-    if (window.location.hash === '#contact') {
-      scrollToContact()
-    }
-  }, [])
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const form = e.currentTarget
-    const data = new FormData(form)
-
-    setStatus('submitting')
-
-    try {
-      await submitContactForm({
-        name: String(data.get('name') ?? ''),
-        email: String(data.get('email') ?? ''),
-        destination: String(data.get('destination') || 'Not specified'),
-        message: String(data.get('message') || 'No additional details'),
-      })
-
-      form.reset()
-      setStatus('success')
-    } catch {
-      setStatus('error')
-    }
-  }
-
-  return (
-    <section id="contact" className="scroll-mt-24 bg-forest-900 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-10 rounded-3xl border border-white/10 bg-gradient-to-br from-forest-950 to-forest-900 p-8 md:p-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-300">
-              {t('Contact')}
-            </p>
-            <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-sand-100 md:text-5xl">
-              {t('Tell us where adventure should take you next.')}
-            </h2>
-            <p className="mt-4 text-lg text-sand-100/88">
-              {t(
-                'Share your goals, dates, and experience level. We turn that into a practical, expert guided plan designed for busy professionals and high-expectation travelers.',
-              )}
-            </p>
-            <div className="mt-8 space-y-3 text-sm text-sand-100/85">
-              <p>{t('Response target: within 1 business day')}</p>
-              <p>{t('Trip planning options from approximately $1,900 per traveler')}</p>
-              <p>{t('Formats: private guided, team retreat, milestone expedition')}</p>
-              <p>
-                {t('Prefer email?')}{' '}
-                <a className="font-semibold text-clay-300 hover:text-clay-200" href={`mailto:${PUBLIC_CONTACT_EMAIL}`}>
-                  {PUBLIC_CONTACT_EMAIL}
-                </a>
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {TRUST_SIGNALS.map((signal) => (
-                <span
-                  key={signal}
-                  className="rounded-full border border-sand-100/30 bg-white/10 px-3 py-1 text-xs font-medium text-sand-100"
-                >
-                  {t(signal)}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {status === 'success' ? (
-            <div className="rounded-2xl border border-clay-500/30 bg-white/5 p-8 text-center">
-              <p className="font-display text-2xl font-semibold text-sand-100">{t('You are on the list!')}</p>
-              <p className="mt-3 text-sand-100/85">
-                {t(
-                  'Thanks for reaching out. We will review your trip details and get back to you within 1-2 business days.',
-                )}
-              </p>
-              <button
-                type="button"
-                onClick={() => setStatus('idle')}
-                className="mt-6 text-sm font-semibold text-clay-400 transition-colors hover:text-clay-500"
-              >
-                {t('Send another inquiry')}
-              </button>
-            </div>
-          ) : (
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <p className="text-xs font-medium text-sand-100/85">
-                {t('Trusted by 2,500+ adventurers. Small groups. Local certified guides.')}
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder={t('Your name')}
-                  required
-                  className="rounded-xl border border-sand-100/10 bg-white/5 px-4 py-3 text-sand-100 placeholder:text-sand-100/40 focus:border-clay-500 focus:outline-none focus:ring-1 focus:ring-clay-500"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder={t('Email address')}
-                  required
-                  className="rounded-xl border border-sand-100/10 bg-white/5 px-4 py-3 text-sand-100 placeholder:text-sand-100/40 focus:border-clay-500 focus:outline-none focus:ring-1 focus:ring-clay-500"
-                />
-              </div>
-              <input
-                type="text"
-                name="destination"
-                placeholder={t('Dream destination (for example Oaxaca, Patagonia)')}
-                className="w-full rounded-xl border border-sand-100/10 bg-white/5 px-4 py-3 text-sand-100 placeholder:text-sand-100/40 focus:border-clay-500 focus:outline-none focus:ring-1 focus:ring-clay-500"
-              />
-              <textarea
-                name="message"
-                rows={4}
-                placeholder={t('Tell us about your group, dates, and experience level')}
-                className="w-full resize-none rounded-xl border border-sand-100/10 bg-white/5 px-4 py-3 text-sand-100 placeholder:text-sand-100/40 focus:border-clay-500 focus:outline-none focus:ring-1 focus:ring-clay-500"
-              />
-              {status === 'error' && (
-                <p className="text-sm text-red-300" role="alert">
-                  {t('Something went wrong. Please try again or email us at')}{' '}
-                  <a href={`mailto:${PUBLIC_CONTACT_EMAIL}`} className="underline hover:text-red-200">
-                    {PUBLIC_CONTACT_EMAIL}
-                  </a>
-                  .
-                </p>
-              )}
-              <button
-                type="submit"
-                disabled={status === 'submitting'}
-                className="w-full rounded-full bg-sand-100 py-3.5 text-sm font-semibold text-forest-950 transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-10"
-              >
-                {status === 'submitting' ? t('Sending...') : t('Send inquiry')}
-              </button>
-            </form>
-          )}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Landing() {
   const appRef = useRef<HTMLDivElement | null>(null)
   const location = useLocation()
@@ -1583,7 +1429,6 @@ function Landing() {
         <VisualGallery />
         <About />
         <Testimonial />
-        <Contact />
       </main>
       <Footer />
     </div>

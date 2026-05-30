@@ -15,6 +15,6 @@ export function scrollToSection(id: string, focusSelector?: string) {
 }
 
 export function scrollToContact(onComplete?: () => void) {
-  scrollToSection('contact', 'input[name="name"]')
+  scrollToSection('contact')
   onComplete?.()
 }

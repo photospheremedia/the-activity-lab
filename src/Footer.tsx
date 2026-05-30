@@ -25,7 +25,7 @@ export function Footer() {
             )}
           </p>
 
-          <div className="mt-6 max-w-sm">
+          <div id="contact" className="mt-6 max-w-sm scroll-mt-24">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sand-100/70">
               {t('Contact')}
             </p>
