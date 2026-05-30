@@ -28,15 +28,15 @@ npm run preview
 
 ## Contact form
 
-Trip inquiries are sent through a serverless `/api/contact` route (FormSubmit on the backend).
+Trip inquiries are sent through `/api/contact` (Vercel serverless) via **Resend** to your private inbox.
 
-1. Copy `.env.example` to `.env.local`
-2. Set `VITE_PUBLIC_CONTACT_EMAIL` to the address shown on the site (`hello@theactivitylab.xyz`)
-3. Set `FORM_INBOX_EMAIL` (or `VITE_FORM_INBOX_EMAIL` for local dev) to your private inbox
-4. Submit a test inquiry once — FormSubmit sends a confirmation email you must accept
+1. Copy `.env.example` to `.env.local` for local `vercel dev`
+2. In Vercel (Production): `RESEND_API_KEY`, `EMAIL_FROM`, `FORM_INBOX_EMAIL=photospheremedia00@gmail.com`
+3. `VITE_PUBLIC_CONTACT_EMAIL` — address shown on the site (`hello@theactivitylab.xyz`)
 
 ```bash
 cp .env.example .env.local
+vercel dev   # runs the API route locally with env from .env.local
 ```
 
 ## Deploy
