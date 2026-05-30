@@ -7,7 +7,6 @@ import { scrollToContact, scrollToSection } from './lib/scroll'
 import { EXPERIENCE_DETAILS } from './lib/experiences'
 import { useI18n } from './i18n'
 import { LanguageSwitcher } from './LanguageSwitcher'
-import { InfoPage, INFO_PAGES } from './InfoPage'
 import { ExperiencePage } from './ExperiencePage'
 import { Footer } from './Footer'
 import { ExperienceModal } from './components/ExperienceModal'
@@ -1596,9 +1595,6 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/experiences/:slug" element={<ExperiencePage />} />
-      {INFO_PAGES.map((page) => (
-        <Route key={page.slug} path={`/${page.slug}`} element={<InfoPage />} />
-      ))}
       <Route path="*" element={<Landing />} />
     </Routes>
   )
