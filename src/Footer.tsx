@@ -25,15 +25,6 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
       { label: 'Sustainability', to: '/sustainability', route: true },
     ],
   },
-  {
-    title: 'Support',
-    links: [
-      { label: 'Contact', section: 'contact' },
-      { label: 'Trip FAQ', to: '/faq', route: true },
-      { label: 'Booking terms', to: '/booking-terms', route: true },
-      { label: 'Travel insurance', to: '/travel-insurance', route: true },
-    ],
-  },
 ]
 
 function FooterLinkItem({ link, className }: { link: FooterLink; className: string }) {
@@ -119,7 +110,7 @@ export function Footer() {
             )}
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7">
+          <div className="grid grid-cols-2 gap-8 lg:col-span-7">
             {FOOTER_LINKS.map((column) => (
               <div key={column.title}>
                 <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-sand-100/55">

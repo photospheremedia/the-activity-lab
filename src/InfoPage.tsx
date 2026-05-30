@@ -66,59 +66,6 @@ export const INFO_PAGES: InfoPageData[] = [
       },
     ],
   },
-  {
-    slug: 'faq',
-    eyebrow: 'Support',
-    title: 'Trip FAQ',
-    intro: 'Answers to the questions travelers ask us most before they book.',
-    sections: [
-      {
-        heading: 'How fit do I need to be?',
-        body: 'We grade every trip by intensity and offer routes for all skill levels — from relaxed day hikes to technical multi-day expeditions.',
-      },
-      {
-        heading: 'How big are the groups?',
-        body: 'Most trips run with 6 to 12 travelers and a certified guide, for better pace control and deeper local access.',
-      },
-      {
-        heading: 'What is included?',
-        body: 'Guiding, logistics, safety support, and a detailed trip brief. Inclusions are listed transparently before you book.',
-      },
-    ],
-  },
-  {
-    slug: 'booking-terms',
-    eyebrow: 'Support',
-    title: 'Booking terms',
-    intro: 'The essentials on deposits, changes, and cancellations — written in plain language.',
-    sections: [
-      {
-        heading: 'Deposits & payment',
-        body: 'A deposit secures your place; the balance is due before departure. We confirm every detail in writing first.',
-      },
-      {
-        heading: 'Changes & cancellations',
-        body: 'Plans change. We offer flexible rebooking windows and clear refund tiers depending on how far out you cancel.',
-      },
-    ],
-  },
-  {
-    slug: 'travel-insurance',
-    eyebrow: 'Support',
-    title: 'Travel insurance',
-    intro:
-      'Adventure travel carries real risk. We require coverage so you can focus on the experience.',
-    sections: [
-      {
-        heading: 'What we require',
-        body: 'All travelers need insurance covering medical care, emergency evacuation, and trip cancellation appropriate to the activity level.',
-      },
-      {
-        heading: 'How we help',
-        body: 'We can recommend trusted providers and outline the activity details your policy should cover for your specific itinerary.',
-      },
-    ],
-  },
 ]
 
 export function InfoPage() {
