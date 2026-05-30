@@ -555,7 +555,7 @@ function Hero() {
 
       <div
         data-hero-content
-        className="relative mx-auto mt-20 grid w-full max-w-6xl gap-10 px-6 pb-24 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:items-end"
+        className="relative mx-auto grid w-full max-w-6xl gap-10 px-6 pb-16 pt-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-12"
       >
         <div>
           <p
@@ -707,8 +707,6 @@ const EXPEDITION_CHAPTERS = [
   },
 ] as const
 
-const TRAIL_VIEWBOX = { w: 1000, h: 600 }
-
 function JourneyFilm() {
   const { t } = useI18n()
   const sectionRef = useRef<HTMLElement | null>(null)
@@ -738,18 +736,23 @@ function JourneyFilm() {
       if (!stage || !trailPath || !marker) return
 
       const pathLength = trailPath.getTotalLength()
-      const svg = trailPath.ownerSVGElement
-      let viewW = svg?.clientWidth ?? stage.clientWidth
-      let viewH = svg?.clientHeight ?? stage.clientHeight
 
       const setX = gsap.quickSetter(marker, 'x', 'px')
       const setY = gsap.quickSetter(marker, 'y', 'px')
       gsap.set(marker, { xPercent: -50, yPercent: -50 })
 
+      // Map a point on the trail path to stage-local pixels using the SVG's
+      // live screen transform. This stays exact under `preserveAspectRatio="none"`,
+      // window resizes, and ScrollTrigger pinning. A cached width/height mapping
+      // diverged from the rendered line in production once the section was pinned,
+      // leaving the marker dot drifting to the right of the trail.
       const placeMarker = (lengthAlong: number) => {
-        const point = trailPath.getPointAtLength(lengthAlong)
-        setX((point.x / TRAIL_VIEWBOX.w) * viewW)
-        setY((point.y / TRAIL_VIEWBOX.h) * viewH)
+        const ctm = trailPath.getScreenCTM()
+        if (!ctm) return
+        const screenPoint = trailPath.getPointAtLength(lengthAlong).matrixTransform(ctm)
+        const stageRect = stage.getBoundingClientRect()
+        setX(screenPoint.x - stageRect.left)
+        setY(screenPoint.y - stageRect.top)
       }
 
       gsap.set(trailPath, { strokeDasharray: pathLength, strokeDashoffset: pathLength })
@@ -762,12 +765,6 @@ function JourneyFilm() {
         placeMarker(pathLength)
         return
       }
-
-      const handleResize = () => {
-        viewW = svg?.clientWidth ?? stage.clientWidth
-        viewH = svg?.clientHeight ?? stage.clientHeight
-      }
-      window.addEventListener('resize', handleResize)
 
       const progress = { value: 0 }
       const advanceChapter = () => {
@@ -846,10 +843,6 @@ function JourneyFilm() {
           gsap.set(videos, { clearProps: 'opacity,scale' })
         }
       })
-
-      return () => {
-        window.removeEventListener('resize', handleResize)
-      }
     }, sectionRef)
 
     return () => context.revert()
