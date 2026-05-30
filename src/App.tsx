@@ -73,13 +73,6 @@ const DESTINATIONS = [
   },
 ]
 
-const STATS = [
-  { value: '40+', label: 'Guided expeditions' },
-  { value: '12', label: 'Countries & counting' },
-  { value: '2,500+', label: 'Adventurers led' },
-  { value: '15', label: 'Years of expertise' },
-]
-
 const HERO_BACKDROPS = [
   'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2560&q=80',
   'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2560&q=80',
@@ -126,24 +119,6 @@ const JOURNEY_STEPS = [
 ]
 
 const ABOUT_CREDENTIALS = ['Since 2011', 'Certified guides', '2,500+ travelers']
-
-const TESTIMONIALS = [
-  {
-    quote:
-      'The route planning felt seamless from start to finish — every transition was handled with care.',
-    trip: 'Patagonia Traverse',
-  },
-  {
-    quote:
-      'The Activity Lab gave us a premium expedition feel without tourist chaos. It felt precise and personal.',
-    trip: 'Highlands + canyon loop',
-  },
-  {
-    quote:
-      'From first call to summit day, every detail was thought through. The visual itinerary was insanely useful.',
-    trip: 'Copper Canyon Loop',
-  },
-]
 
 const GALLERY_IMAGES = [
   {
@@ -1326,50 +1301,6 @@ function About() {
   )
 }
 
-function Testimonial() {
-  const { t } = useI18n()
-  return (
-    <section className="relative overflow-hidden bg-forest-950 py-24 md:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(212,137,106,0.22),transparent_40%)]" />
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div data-reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand-100">
-              {t('Traveler stories')}
-            </p>
-            <h3 className="font-display mt-3 text-4xl font-bold tracking-tight text-sand-100">
-              {t('Experiences that earn repeat travelers.')}
-            </h3>
-            <div className="mt-8 grid grid-cols-2 gap-3">
-              {STATS.map((stat) => (
-                <div key={stat.label} className="rounded-xl border border-white/30 bg-white/18 p-4">
-                  <p className="font-display text-3xl text-sand-50">{stat.value}</p>
-                  <p className="mt-1 text-xs font-medium text-sand-100">{t(stat.label)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {TESTIMONIALS.map((item, index) => (
-              <blockquote
-                key={item.trip}
-                data-reveal
-                className={`rounded-2xl border border-white/12 bg-white/6 p-6 backdrop-blur-sm ${
-                  index === 0 ? 'md:col-span-2' : ''
-                }`}
-              >
-                <p className="text-base leading-relaxed text-sand-100/90">&ldquo;{t(item.quote)}&rdquo;</p>
-                <footer className="mt-4 text-sm text-sand-100/78">{t(item.trip)}</footer>
-              </blockquote>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Landing() {
   const appRef = useRef<HTMLDivElement | null>(null)
   const location = useLocation()
@@ -1428,7 +1359,6 @@ function Landing() {
         <Destinations />
         <VisualGallery />
         <About />
-        <Testimonial />
       </main>
       <Footer />
     </div>
