@@ -25,11 +25,11 @@ export const INFO_PAGES: InfoPageData[] = [
     sections: [
       {
         heading: 'Why work with us',
-        body: 'Small, senior team. Real time in the field. Fair pay, certified training budgets, and the autonomy to design trips you would want to take yourself.',
+        body: 'Real time in the field. Fair pay, certified training budgets, and the autonomy to design trips you would want to take yourself.',
       },
       {
         heading: 'Open roles',
-        body: 'We are always looking for IFMGA-track mountain guides, route planners, and guest-experience leads across Mexico and our partner regions. Send us a note and tell us what you love to guide.',
+        body: 'We are always looking for IFMGA-track mountain guides, route planners, and guest-experience leads. Send us a note through the contact form and tell us what you love to guide.',
       },
     ],
   },
@@ -37,15 +37,15 @@ export const INFO_PAGES: InfoPageData[] = [
     slug: 'press',
     eyebrow: 'Company',
     title: 'Press kit',
-    intro: 'Logos, founder bios, and high-resolution imagery for journalists and partners.',
+    intro: 'Logos and high-resolution imagery for journalists and partners.',
     sections: [
       {
         heading: 'About the company',
-        body: 'Founded in 2011 in Oaxaca, we run certified small-group hikes and guided adventures rooted in Mexico, with trusted partners worldwide.',
+        body: 'Since 2011 we have run certified small-group hikes and guided adventures with trusted partners worldwide.',
       },
       {
         heading: 'Media requests',
-        body: 'For interviews, imagery, or fact-checking, reach our team and we will respond within one business day with everything you need.',
+        body: 'For interviews, imagery, or fact-checking, use the contact form and we will respond within one business day with everything you need.',
       },
     ],
   },
@@ -116,54 +116,6 @@ export const INFO_PAGES: InfoPageData[] = [
       {
         heading: 'How we help',
         body: 'We can recommend trusted providers and outline the activity details your policy should cover for your specific itinerary.',
-      },
-    ],
-  },
-  {
-    slug: 'privacy',
-    eyebrow: 'Legal',
-    title: 'Privacy Policy',
-    intro: 'How we collect, use, and protect the information you share with us.',
-    sections: [
-      {
-        heading: 'What we collect',
-        body: 'Only what we need to plan your trip and stay in touch — your name, contact details, and the trip preferences you provide.',
-      },
-      {
-        heading: 'How we use it',
-        body: 'We use your information to plan and run your trip and to respond to your inquiries. We never sell your personal data.',
-      },
-    ],
-  },
-  {
-    slug: 'terms',
-    eyebrow: 'Legal',
-    title: 'Terms of Service',
-    intro: 'The agreement that governs your use of our website and services.',
-    sections: [
-      {
-        heading: 'Using our services',
-        body: 'By booking with us you agree to follow guide instructions, safety briefings, and the reasonable requirements of each itinerary.',
-      },
-      {
-        heading: 'Liability',
-        body: 'Adventure travel involves inherent risks. We operate to high safety standards, and travelers accept responsibility for participating informed and prepared.',
-      },
-    ],
-  },
-  {
-    slug: 'cookies',
-    eyebrow: 'Legal',
-    title: 'Cookie Settings',
-    intro: 'We keep cookies to a minimum — just enough to make the site work well.',
-    sections: [
-      {
-        heading: 'Essential cookies',
-        body: 'These remember your language preference and keep the site running smoothly. They cannot be switched off.',
-      },
-      {
-        heading: 'Analytics',
-        body: 'We use privacy-friendly analytics to understand what travelers find useful, always in aggregate and never tied to your identity.',
       },
     ],
   },

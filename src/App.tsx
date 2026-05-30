@@ -42,7 +42,6 @@ function PlanTripButton({
 const NAV_LINKS = [
   { href: '#experiences', label: 'Activities' },
   { href: '#destinations', label: 'Destinations' },
-  { href: '#team', label: 'Team' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -128,7 +127,7 @@ const JOURNEY_STEPS = [
   {
     title: 'Design',
     meta: '48-hour turnaround',
-    description: 'Our route team drafts a cinematic day-by-day itinerary with weather windows.',
+    description: 'We draft a cinematic day-by-day itinerary with weather windows.',
   },
   {
     title: 'Deliver',
@@ -137,65 +136,22 @@ const JOURNEY_STEPS = [
   },
 ]
 
-const ABOUT_CREDENTIALS = ['Since 2011', 'Oaxaca-based', 'Certified guides', '2,500+ travelers']
-
-const TEAM = [
-  {
-    name: 'Lucía Moreno',
-    role: 'Founder & Lead Guide',
-    location: 'Oaxaca, Mexico',
-    bio: 'Built the company after 12 seasons guiding Mexico\u2019s highland volcanoes. IFMGA-certified.',
-    tags: ['High-altitude', 'Route design'],
-    image:
-      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    name: 'Daniel Reyes',
-    role: 'Head of Route Design',
-    location: 'Mexico City, Mexico',
-    bio: 'Maps every itinerary day-by-day, balancing weather windows, terrain, and recovery.',
-    tags: ['Logistics', 'Weather windows'],
-    image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    name: 'Kenji Watanabe',
-    role: 'Lead Mountain Guide',
-    location: 'Patagonia partner base',
-    bio: 'Leads our toughest alpine traverses with a calm, safety-first approach to big terrain.',
-    tags: ['Alpine', 'Technical climbs'],
-    image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    name: 'Sofía Navarro',
-    role: 'Guest Experience Lead',
-    location: 'Guatemala City, Guatemala',
-    bio: 'Your point of contact from first call to summit day, handling every detail end to end.',
-    tags: ['Concierge', 'Local culture'],
-    image:
-      'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80',
-  },
-]
-
+const ABOUT_CREDENTIALS = ['Since 2011', 'Certified guides', '2,500+ travelers']
 
 const TESTIMONIALS = [
   {
     quote:
-      'The route planning felt like having a production team behind our trek. Every transition between locations was seamless.',
-    name: 'Nadia R.',
+      'The route planning felt seamless from start to finish — every transition was handled with care.',
     trip: 'Patagonia Traverse',
   },
   {
     quote:
       'The Activity Lab gave us a premium expedition feel without tourist chaos. It felt precise and personal.',
-    name: 'Derek C.',
-    trip: 'Oaxaca + Chiapas',
+    trip: 'Highlands + canyon loop',
   },
   {
     quote:
       'From first call to summit day, every detail was thought through. The visual itinerary was insanely useful.',
-    name: 'Amelia V.',
     trip: 'Copper Canyon Loop',
   },
 ]
@@ -203,37 +159,31 @@ const TESTIMONIALS = [
 const GALLERY_IMAGES = [
   {
     title: 'Alpine dawn ascents',
-    location: 'Patagonia',
     image:
       'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1600&q=80',
   },
   {
     title: 'Jungle river crossings',
-    location: 'Chiapas, Mexico',
     image:
       'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80',
   },
   {
     title: 'Volcanic ridge trekking',
-    location: 'Central Mexico',
     image:
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80',
   },
   {
     title: 'Canyon sunset camps',
-    location: 'Copper Canyon',
     image:
       'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80',
   },
   {
     title: 'Highland trail mornings',
-    location: 'Oaxaca, Mexico',
     image:
       'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80',
   },
   {
     title: 'Glacier valley routes',
-    location: 'Iceland',
     image:
       'https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80',
   },
@@ -1271,10 +1221,7 @@ function VisualGallery() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-950/92 via-forest-950/28 to-transparent" />
               <div className="relative flex h-full flex-col justify-end p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.17em] text-sand-100/82">
-                  {t(item.location)}
-                </p>
-                <h3 className="font-display mt-2 text-2xl leading-tight text-sand-100">{t(item.title)}</h3>
+                <h3 className="font-display text-2xl leading-tight text-sand-100">{t(item.title)}</h3>
               </div>
             </article>
           ))}
@@ -1304,7 +1251,7 @@ function About() {
             </p>
             <p className="mt-4 text-lg leading-relaxed text-forest-950/82">
               {t(
-                'With deep roots in Mexico and trusted partners worldwide, we deliver guided journeys that feel both authentic and meticulously organized.',
+                'With trusted partners worldwide, we deliver guided journeys that feel both authentic and meticulously organized.',
               )}
             </p>
 
@@ -1390,81 +1337,6 @@ function About() {
   )
 }
 
-function Team() {
-  const { t } = useI18n()
-  return (
-    <section id="team" className="scroll-mt-24 bg-sand-50 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-700">{t('Our team')}</p>
-            <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-forest-950 md:text-5xl">
-              {t('The people behind every expedition.')}
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-forest-950/82">
-              {t(
-                'A small, certified crew of guides and planners who live in the regions we travel — and obsess over the details so you do not have to.',
-              )}
-            </p>
-          </div>
-          <p className="max-w-sm text-sm leading-relaxed text-forest-950/78">
-            {t(
-              'Every trip is led by a named guide you will meet before departure. No anonymous handoffs, ever.',
-            )}
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {TEAM.map((member) => (
-            <article key={member.name} data-reveal className="group">
-              <div className="relative overflow-hidden rounded-2xl ring-1 ring-forest-950/10">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  loading="lazy"
-                  className="aspect-[3/4] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/85 via-forest-950/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="absolute inset-x-4 bottom-4 flex translate-y-2 flex-wrap gap-1.5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                  {member.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-sand-100/30 bg-white/15 px-2.5 py-1 text-[11px] font-medium text-sand-50 backdrop-blur-sm"
-                    >
-                      {t(tag)}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-4">
-                <h3 className="font-display text-xl font-semibold text-forest-950">{member.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-clay-700">{t(member.role)}</p>
-                <p className="mt-1 flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.12em] text-forest-950/55">
-                  <svg
-                    aria-hidden
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="h-3.5 w-3.5 text-clay-500"
-                  >
-                    <path
-                      d="M12 21s7-5.686 7-11a7 7 0 1 0-14 0c0 5.314 7 11 7 11Z"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                    />
-                    <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
-                  </svg>
-                  {t(member.location)}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-forest-950/75">{t(member.bio)}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Testimonial() {
   const { t } = useI18n()
   return (
@@ -1492,17 +1364,14 @@ function Testimonial() {
           <div className="grid gap-4 md:grid-cols-2">
             {TESTIMONIALS.map((item, index) => (
               <blockquote
-                key={item.name}
+                key={item.trip}
                 data-reveal
                 className={`rounded-2xl border border-white/12 bg-white/6 p-6 backdrop-blur-sm ${
                   index === 0 ? 'md:col-span-2' : ''
                 }`}
               >
                 <p className="text-base leading-relaxed text-sand-100/90">&ldquo;{t(item.quote)}&rdquo;</p>
-                <footer className="mt-4 text-sm">
-                  <span className="font-semibold text-clay-300">{item.name}</span>
-                  <span className="text-sand-100/78"> · {t(item.trip)}</span>
-                </footer>
+                <footer className="mt-4 text-sm text-sand-100/78">{t(item.trip)}</footer>
               </blockquote>
             ))}
           </div>
@@ -1714,7 +1583,6 @@ function Landing() {
         <Destinations />
         <VisualGallery />
         <About />
-        <Team />
         <Testimonial />
         <Contact />
       </main>
