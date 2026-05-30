@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --color-forest-950: #0f1f1a;
+  --color-forest-900: #1a3c34;
+  --color-forest-800: #234a40;
+  --color-forest-700: #2d5c50;
+  --color-clay-700: #87432a;
+  --color-clay-600: #a85838;
+  --color-clay-500: #c4704a;
+  --color-clay-400: #d4896a;
+  --color-clay-300: #e0a98f;
+  --color-clay-200: #ecc6b3;
+  --color-sand-100: #f5f0e8;
+  --color-sand-50: #faf8f4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, #f8f5ef 0%, #f5f0e8 45%, #f2ece3 100%);
+  color: var(--color-forest-950);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: rgba(196, 112, 74, 0.28);
+  color: #0f1f1a;
+}
+
+@keyframes film-chapter-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.film-chapter-in {
+  animation: film-chapter-in 0.5s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .film-chapter-in {
+    animation: none;
+  }
+}

@@ -1,0 +1,1103 @@
+{
+  "Common": {
+    "brandName": "Crypto Pay",
+    "tagline": "Suivez et acceptez les paiements crypto. Axé sur la confidentialité. Portefeuille à portefeuille.",
+    "createAccount": "Commencer",
+    "logIn": "Se connecter",
+    "dashboard": "Tableau de bord",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "supportedAssets": "Monnaies prises en charge",
+    "viewPricing": "Voir les tarifs",
+    "getStarted": "Commencer",
+    "getStartedFree": "Commencer gratuitement",
+    "talkToSales": "Parler à l’équipe commerciale",
+    "allRightsReserved": "Tous droits réservés.",
+    "loading": "Chargement…",
+    "saving": "Enregistrement…",
+    "cancel": "Annuler",
+    "back": "Retour",
+    "continue": "Continuer",
+    "error": "Erreur",
+    "success": "Succès",
+    "copied": "Copié !",
+    "copyFailed": "Échec de la copie",
+    "sendResetEmail": "Envoyer l’email de réinitialisation",
+    "verifyAndEnable": "Vérifier et activer",
+    "remove": "Supprimer",
+    "enable": "Activer",
+    "added": "Ajouté le {date}",
+    "updating": "Mise à jour…",
+    "signingOut": "Déconnexion…",
+    "uploading": "Téléversement…",
+    "deleting": "Suppression…",
+    "submitting": "Envoi…",
+    "sending": "Envoi…",
+    "refreshing": "Actualisation…",
+    "typing": "Saisie…",
+    "processing": "Traitement…",
+    "verifying": "Vérification…",
+    "sendingResetLink": "Envoi du lien de réinitialisation…",
+    "resettingPassword": "Réinitialisation du mot de passe…",
+    "creatingAccount": "Création du compte…",
+    "saveChanges": "Enregistrer les modifications",
+    "verifyingResetLink": "Vérification du lien de réinitialisation…",
+    "redirecting": "Redirection…",
+    "thinking": "Réflexion…",
+    "subscribing": "Abonnement…",
+    "joining": "Inscription…",
+    "loadingLiveRates": "Chargement des taux en temps réel…",
+    "removing": "Suppression…"
+  },
+  "Navigation": {
+    "pricing": "Tarifs",
+    "howItWorks": "Comment ça marche",
+    "developers": "Développeurs",
+    "contact": "Contact",
+    "mainNavAria": "Navigation principale"
+  },
+  "Footer": {
+    "product": "Produit",
+    "company": "Entreprise",
+    "legal": "Mentions légales",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d’utilisation"
+  },
+  "LocaleSwitcher": {
+    "label": "Langue et région",
+    "en": "Anglais (États-Unis)",
+    "ar": "Arabe (Arabie saoudite)",
+    "es": "Espagnol (Espagne)",
+    "fr": "Français (France)",
+    "de": "Allemand (Allemagne)",
+    "de-AT": "Allemand (Autriche)"
+  },
+  "HomePage": {
+    "metaTitle": "Acceptez les paiements en Bitcoin et crypto en ligne",
+    "metaDescription": "Paiements crypto non dépositaires directement vers votre portefeuille. Checkout respectueux de la confidentialité. Mise en place en quelques minutes.",
+    "heroTitle": "Acceptez Bitcoin, USDT et crypto partout",
+    "heroSubtitle": "Axé sur la confidentialité. Portefeuille à portefeuille. Mise en place en quelques minutes.",
+    "heroBody": "Recevez des paiements crypto depuis votre boutique ou votre application directement sur votre portefeuille. Nous ne détenons pas vos fonds : vous gardez le contrôle total.",
+    "howItWorksCta": "Voir comment ça marche",
+    "highlightsEyebrow": "Pourquoi Crypto Pay",
+    "highlightsTitle": "Conçu comme les passerelles auxquelles les marchands font déjà confiance",
+    "highlights": {
+      "nonCustodial": {
+        "title": "Non dépositaire",
+        "description": "Les paiements vont directement vers votre portefeuille."
+      },
+      "privacyFriendly": {
+        "title": "Respectueux de la confidentialité",
+        "description": "Le checkout reste sur votre site. Nous suivons le statut ; nous ne conservons pas de soldes."
+      },
+      "quickSetup": {
+        "title": "Mise en place rapide",
+        "description": "Connectez un portefeuille et créez votre premier lien de paiement en quelques minutes."
+      }
+    },
+    "howItWorksEyebrow": "Comment ça marche",
+    "howItWorksTitle": "Du checkout au paiement confirmé",
+    "fullWalkthrough": "Guide complet →",
+    "whatYouGetEyebrow": "Ce que vous obtenez",
+    "whatYouGetTitle": "Tout pour accepter la crypto en ligne",
+    "whatYouGetDescription": "Liens de paiement, factures et une API unifiée : rapide, fiable et sous votre contrôle.",
+    "integrationsEyebrow": "Intégrations",
+    "integrationsTitle": "Liens de paiement, boutons et API",
+    "integrationsDescription": "Utilisez des liens de paiement pour des factures rapides, intégrez le checkout sur votre site, ou connectez notre API développeurs et nos webhooks.",
+    "apiEyebrow": "Développeurs",
+    "apiTitle": "Une API unique pour BTC, ETH, USDT et plus",
+    "apiDescription": "Contrôle total avec l’API Crypto Pay. Documentation claire, webhooks et support pour des parcours de checkout personnalisés.",
+    "apiCta": "Accéder à la doc de l’API",
+    "getStartedTitle": "Prêt à démarrer ?",
+    "getStartedDescription": "Rejoignez-nous pour accéder à une technologie de paiement qui offre des checkouts rapides et fluides à vos clients.",
+    "steps": {
+      "1": {
+        "title": "Connectez votre portefeuille",
+        "description": "Ajoutez l’adresse publique sur laquelle vous souhaitez recevoir les paiements. Aucune clé privée n’est requise."
+      },
+      "2": {
+        "title": "Créez une demande de paiement",
+        "description": "Définissez le montant, la monnaie et une référence. Partagez un lien ou appelez l’API depuis votre backend."
+      },
+      "3": {
+        "title": "Suivez la confirmation on-chain",
+        "description": "Nous détectons la transaction et mettons à jour le statut : impayé → en cours → payé."
+      }
+    },
+    "benefits": {
+      "directSettlement": {
+        "title": "Portefeuille à portefeuille",
+        "description": "Les fonds ne transitent jamais par un compte marchand mutualisé. Le règlement est direct vers votre portefeuille."
+      },
+      "noChargebacks": {
+        "title": "Sans rétrofacturation",
+        "description": "Les paiements on-chain sont définitifs une fois confirmés : pas d’annulation comme sur carte."
+      },
+      "limitedKyc": {
+        "title": "KYC limité",
+        "description": "Nous ne traitons ni ne stockons les paiements. Les exigences dépendent de l’évaluation des risques, pas de la conservation des fonds."
+      },
+      "unifiedApi": {
+        "title": "Expérience unifiée",
+        "description": "Un seul espace pour créer des demandes de paiement et suivre le statut du lien jusqu’à la confirmation."
+      }
+    }
+  },
+  "Account": {
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "wallet": "Portefeuille",
+      "security": "Sécurité",
+      "settings": "Paramètres",
+      "signOut": "Se déconnecter",
+      "adminDashboard": "Tableau de bord admin"
+    },
+    "header": {
+      "openMenu": "Ouvrir le menu de navigation",
+      "closeMenu": "Fermer le menu de navigation",
+      "sidebarNav": "Navigation du compte",
+      "userMenu": "Ouvrir le menu du compte",
+      "profile": "Profil"
+    },
+    "help": {
+      "menuLabel": "Aide et support",
+      "title": "Aide et support",
+      "subtitle": "Documentation et sécurité du compte",
+      "documentation": "Documentation développeur",
+      "documentationDescription": "Charges, webhooks et guides d’intégration",
+      "security": "Sécurité",
+      "securityDescription": "Mot de passe, 2FA et sessions actives",
+      "emailUs": "Nous écrire",
+      "emailAddress": "support@cryptopay.sale"
+    },
+    "dashboard": {
+      "welcome": "Bon retour, {name}",
+      "subtitle": "Configurez des portefeuilles de règlement pour votre activité. Les liens de paiement et le checkout arrivent ensuite.",
+      "quickAccess": "Accès rapide",
+      "securityDescription": "Gérer la 2FA, les sessions et le mot de passe",
+      "settingsDescription": "Profil, devise et préférences email",
+      "developersTitle": "API et intégration",
+      "developersDescription": "Docs pour les charges, webhooks et checkout personnalisé"
+    },
+    "setup": {
+      "title": "Bien démarrer",
+      "description": "Suivez ces étapes avant d’accepter des paiements crypto sur votre site.",
+      "step1Title": "Ajouter un portefeuille de règlement",
+      "step1Description": "Collez une adresse publique que vous contrôlez. Nous ne demandons jamais de clés privées.",
+      "step1Action": "Ajouter un portefeuille",
+      "step2Title": "Vérification admin",
+      "step2Description": "Chaque nouvelle adresse est examinée avant de pouvoir recevoir des règlements.",
+      "step2DescriptionPending": "Votre portefeuille est en attente : nous avons prévenu notre équipe par email. Utilisez Renvoyer dans l’onglet Portefeuilles si besoin.",
+      "step3Title": "Accepter les paiements (bientôt disponible)",
+      "step3Description": "Liens de paiement, API de charges et webhooks de confirmation on-chain sont en cours de développement.",
+      "step3Action": "Voir la doc développeur"
+    },
+    "activity": {
+      "title": "Activité des paiements",
+      "badge": "Bientôt disponible",
+      "description": "Les paiements on-chain et l’état de règlement apparaîtront ici après le lancement du checkout.",
+      "emptyDetail": "Rien à afficher pour le moment : ce n’est pas un flux de transactions. Une fois les charges disponibles, vous verrez des événements impayé, en cours et payé comme sur d’autres outils marchands crypto.",
+      "developersCta": "Doc développeur",
+      "howItWorksCta": "Comment ça marche",
+      "roadmap": {
+        "charges": {
+          "title": "Liens de paiement et charges",
+          "description": "Créez une demande avec un montant, une monnaie et une référence de commande."
+        },
+        "webhooks": {
+          "title": "Webhooks",
+          "description": "Callbacks HTTPS lorsqu’un paiement est confirmé on-chain."
+        },
+        "history": {
+          "title": "Historique et export",
+          "description": "Rapprochez les paiements pour la comptabilité."
+        }
+      }
+    },
+    "wallets": {
+      "eyebrow": "Accepter la crypto",
+      "title": "Portefeuilles de règlement",
+      "description": "Adresses de règlement nommées pour votre entreprise. Chaque adresse est vérifiée par notre équipe avant de pouvoir être utilisée pour le règlement.",
+      "tabs": {
+        "overview": "Aperçu",
+        "wallets": "Portefeuilles",
+        "activity": "Activité"
+      },
+      "stats": {
+        "verified": "Vérifiés",
+        "verifiedHint": "Prêts pour le routage des règlements lorsque les paiements seront disponibles",
+        "pendingReview": "En attente de revue",
+        "pendingHint": "En attente de vérification par l’admin Crypto Pay",
+        "totalWallets": "Total des portefeuilles",
+        "totalHint": "Adresses nommées sur votre compte"
+      },
+      "listHint": "Enregistrer envoie l’adresse en revue admin. Vous recevrez un email lorsqu’elle est approuvée ou rejetée.",
+      "addWallet": "Ajouter un portefeuille",
+      "emptyState": "Aucun portefeuille pour l’instant. Ajoutez votre première adresse de règlement pour démarrer.",
+      "table": {
+        "name": "Nom",
+        "network": "Réseau",
+        "address": "Adresse",
+        "status": "Statut",
+        "actions": "Actions",
+        "primary": "Principal"
+      },
+      "status": {
+        "verified": "Vérifié",
+        "rejected": "Rejeté",
+        "pending": "Vérification en attente"
+      },
+      "edit": "Modifier",
+      "resend": "Renvoyer",
+      "copyAddress": "Copier l’adresse",
+      "confirmDelete": "Supprimer ce portefeuille en attente ?",
+      "dialog": {
+        "addTitle": "Ajouter un portefeuille",
+        "editTitle": "Modifier le portefeuille",
+        "description": "Nommez votre portefeuille (ex. BTC principal, Ventes en ligne). Chaque enregistrement est envoyé pour vérification admin.",
+        "walletName": "Nom du portefeuille",
+        "walletNamePlaceholder": "ex. BTC principal",
+        "network": "Réseau",
+        "walletAddress": "Adresse du portefeuille",
+        "addressPlaceholder": "Collez l’adresse",
+        "primaryCheckbox": "Définir comme portefeuille principal de règlement"
+      },
+      "cancel": "Annuler",
+      "saveForVerification": "Enregistrer pour vérification",
+      "saving": "Enregistrement…",
+      "error": "Erreur",
+      "saved": "Enregistré",
+      "notice": "Information",
+      "success": "Succès",
+      "rejection": {
+        "title": "Portefeuille non approuvé",
+        "intro": "Notre équipe n’a pas pu vérifier cette adresse de règlement.",
+        "reasonLabel": "Motif",
+        "defaultMessage": "Aucun motif précis n’a été indiqué. Si vous pensez qu’il s’agit d’une erreur, contactez le support après avoir mis à jour votre adresse.",
+        "nextSteps": "Modifiez le portefeuille, corrigez l’adresse si nécessaire, puis enregistrez pour une nouvelle vérification."
+      },
+      "messages": {
+        "invalidDetails": "Informations de portefeuille invalides.",
+        "duplicateName": "Vous avez déjà un portefeuille avec ce nom.",
+        "updateFailed": "Impossible de mettre à jour le portefeuille. Réessayez.",
+        "saveFailed": "Impossible d’enregistrer le portefeuille. Réessayez.",
+        "savedPending": "Portefeuille enregistré en attente de vérification. Notre équipe l’examinera sous peu.",
+        "notFound": "Portefeuille introuvable.",
+        "resendOnlyPending": "Seuls les portefeuilles en attente peuvent demander un nouvel email de revue.",
+        "resendCooldown": "Un rappel a déjà été envoyé au cours des dernières 24 heures. Veuillez patienter ou contacter le support en cas d’urgence.",
+        "requestUpdateFailed": "Impossible de mettre à jour la demande. Réessayez.",
+        "reminderFailed": "Le rappel n’a pas pu être envoyé pour le moment. Votre portefeuille reste en attente de revue.",
+        "reminderSent": "Rappel de vérification envoyé à l’admin Crypto Pay. Le statut reste en attente jusqu’à approbation.",
+        "deleteOnlyPending": "Seuls les portefeuilles en attente peuvent être supprimés.",
+        "deleted": "Portefeuille en attente supprimé."
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "description": "Gérez vos préférences de compte et vos notifications",
+      "saveSettings": "Enregistrer les paramètres",
+      "saving": "Enregistrement...",
+      "savedSuccess": "Paramètres enregistrés avec succès !",
+      "saveFailed": "Échec de l’enregistrement des paramètres",
+      "language": "Langue",
+      "languageHint": "S’applique au site et aux e-mails transactionnels Crypto Pay (portefeuille, bienvenue, avis de compte). Enregistré sur votre compte pour votre prochaine visite.",
+      "profileSection": "Informations du profil",
+      "emailAddress": "Adresse email",
+      "companyName": "Nom de l’entreprise",
+      "phoneNumber": "Numéro de téléphone",
+      "businessType": "Type d’activité",
+      "numberOfLocations": "Nombre d’emplacements",
+      "preferencesSection": "Préférences",
+      "theme": "Thème",
+      "themeLight": "Clair",
+      "themeDark": "Sombre",
+      "themeAuto": "Auto",
+      "currency": "Devise",
+      "notificationsSection": "Notifications",
+      "emailNotifications": "Notifications email",
+      "emailNotificationsHint": "Recevoir des notifications par email",
+      "smsNotifications": "Notifications SMS",
+      "smsNotificationsHint": "Recevoir des notifications par SMS",
+      "walletUpdates": "Emails de portefeuilles et paiements",
+      "walletUpdatesHint": "Résultats de vérification et statut des paiements (lorsque le checkout sera disponible)",
+      "marketingEmails": "Actualités produit",
+      "marketingEmailsHint": "Nouveautés sur les fonctionnalités et la tarification Crypto Pay",
+      "businessTypes": {
+        "online_store": "Boutique en ligne / e-commerce",
+        "saas": "SaaS / logiciel",
+        "retail": "Commerce de détail",
+        "services": "Services professionnels",
+        "marketplace": "Place de marché",
+        "other": "Autre"
+      }
+    },
+    "security": {
+      "title": "Paramètres de sécurité",
+      "description": "Gérez la sécurité de votre compte, les méthodes d’authentification et vos réglages de confidentialité",
+      "accountSecure": "Votre compte est sécurisé",
+      "lastSignIn": "Dernière connexion : {date}",
+      "never": "Jamais",
+      "password": "Mot de passe",
+      "passwordUpdateHint": "Mettez à jour votre mot de passe pour sécuriser votre compte",
+      "passwordSetHint": "Définissez un mot de passe pour renforcer la sécurité de votre compte",
+      "twoFactor": "Authentification à deux facteurs",
+      "twoFactorHint": "Ajoutez une couche de sécurité supplémentaire avec la 2FA",
+      "connectedAccounts": "Comptes connectés",
+      "connectedAccountsHint": "Gérez vos comptes sociaux et OAuth connectés",
+      "connected": "Connecté",
+      "active": "Actif",
+      "noConnectedAccounts": "Aucun compte connecté pour l’instant",
+      "connectSocialHint": "Connectez des comptes sociaux pour une connexion plus simple",
+      "activeSessions": "Sessions actives",
+      "activeSessionsHint": "Afficher et gérer vos sessions de connexion actives",
+      "currentSession": "Session actuelle",
+      "lastActive": "Dernière activité : {time}",
+      "justNow": "À l’instant",
+      "thisDevice": "Cet appareil",
+      "dangerZone": "Zone de danger",
+      "dangerZoneHint": "Actions irréversibles qui affectent définitivement votre compte. Procédez avec prudence.",
+      "deleteAccount": "Supprimer le compte"
+    },
+    "loading": "Chargement de votre compte…",
+    "password": {
+      "currentPassword": "Mot de passe actuel",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Confirmer le nouveau mot de passe",
+      "currentPasswordPlaceholder": "Entrez le mot de passe actuel",
+      "newPasswordPlaceholder": "Entrez le nouveau mot de passe",
+      "confirmPasswordPlaceholder": "Confirmez le nouveau mot de passe",
+      "currentRequired": "Le mot de passe actuel est requis",
+      "minLength": "Le mot de passe doit contenir au moins 8 caractères",
+      "mismatch": "Les mots de passe ne correspondent pas",
+      "updateFailed": "Échec de la mise à jour du mot de passe",
+      "updatedSuccess": "Mot de passe mis à jour avec succès",
+      "setSuccess": "Mot de passe défini avec succès",
+      "updateButton": "Mettre à jour le mot de passe",
+      "setButton": "Définir le mot de passe",
+      "resetEmailFailed": "Échec de l’envoi de l’email de réinitialisation",
+      "resetEmailSent": "Si un compte existe pour cet email, un lien de réinitialisation a été envoyé.",
+      "strengthHint": "Utilisez au moins 8 caractères avec un mélange de lettres, chiffres et symboles",
+      "strengthWeak": "Faible",
+      "strengthFair": "Moyen",
+      "strengthGood": "Bon",
+      "strengthStrong": "Fort",
+      "strengthLabel": "Robustesse du mot de passe"
+    },
+    "twoFactor": {
+      "loadFailed": "Impossible de charger les paramètres de 2FA",
+      "removeFailed": "Impossible de désactiver la 2FA",
+      "enabled": "2FA activée",
+      "disabled": "2FA désactivée",
+      "enabledHint": "Votre compte est protégé par l’authentification à deux facteurs",
+      "disabledHint": "Ajoutez une couche de sécurité supplémentaire à votre compte",
+      "enableButton": "Activer la 2FA",
+      "activeAuthenticators": "Authentificateurs actifs",
+      "removeAuthenticator": "Supprimer l’authentificateur",
+      "info": "L’authentification à deux facteurs ajoute une couche de sécurité en demandant un code depuis votre application d’authentification en plus de votre mot de passe."
+    },
+    "mfa": {
+      "title": "Activer l’authentification à deux facteurs",
+      "description": "Ajoutez une couche de sécurité à votre compte en exigeant un code de vérification en plus de votre mot de passe.",
+      "needTitle": "Ce dont vous aurez besoin :",
+      "needApp": "Une application d’authentification (Google Authenticator, Authy, 1Password, etc.)",
+      "needDevice": "Votre smartphone ou tablette",
+      "howTitle": "Comment ça marche :",
+      "stepScan": "Scannez un QR code avec votre application d’authentification",
+      "stepEnter": "Saisissez le code à 6 chiffres généré par l’application",
+      "stepLogin": "Utilisez ce code à chaque connexion",
+      "scanTitle": "Scanner le QR code",
+      "scanDescription": "Scannez ce QR code avec votre application d’authentification, puis saisissez le code à 6 chiffres pour vérifier.",
+      "qrAlt": "QR code 2FA",
+      "manualEntry": "Impossible de scanner ? Saisissez ce code manuellement :",
+      "codeLabel": "Saisissez le code à 6 chiffres",
+      "codePlaceholder": "000000",
+      "completeTitle": "2FA activée avec succès !",
+      "completeDescription": "Votre compte est désormais protégé par l’authentification à deux facteurs.",
+      "completeHint": "Vous devrez saisir un code depuis votre application d’authentification à chaque connexion.",
+      "enrollmentFailed": "Échec de l’activation",
+      "enrollmentFailedHint": "Impossible de configurer la 2FA",
+      "unexpectedError": "Une erreur inattendue s’est produite",
+      "invalidCode": "Code invalide",
+      "invalidCodeHint": "Veuillez saisir un code à 6 chiffres",
+      "verificationFailed": "Échec de la vérification",
+      "invalidCodeRetry": "Code invalide. Veuillez réessayer.",
+      "secretCopied": "Clé secrète copiée dans le presse-papiers",
+      "copyManually": "Veuillez copier la clé secrète manuellement"
+    }
+  },
+  "Pricing": {
+    "metaTitle": "Tarifs | Crypto Pay",
+    "metaDescription": "Une tarification claire pour les entreprises qui acceptent des paiements crypto.",
+    "ogTitle": "Tarifs simples et transparents",
+    "ogDescription": "Une tarification claire pour les entreprises qui acceptent des paiements crypto. Règlement direct vers portefeuille inclus.",
+    "eyebrow": "Tarifs",
+    "title": "Des tarifs simples pour les équipes exigeantes",
+    "description": "Démarrez rapidement avec une tarification transparente par transaction, puis passez à des conditions commerciales sur mesure à mesure que votre volume augmente.",
+    "standard": {
+      "subtitle": "frais de base par transaction réussie",
+      "note": "Aucun frais de plateforme caché",
+      "features": {
+        "directSettlement": "Règlement direct vers portefeuille",
+        "checkoutLinks": "Liens de checkout crypto et factures",
+        "statusTracking": "Suivi de statut en temps réel",
+        "reporting": "Rapports de base et exports",
+        "support": "Support d’onboarding par email"
+      }
+    },
+    "business": {
+      "name": "Échelle entreprise",
+      "price": "Sur mesure",
+      "subtitle": "tarification selon le volume",
+      "note": "Pour les opérations multi-sites",
+      "features": {
+        "everythingStandard": "Tout ce qui est inclus dans Standard",
+        "customReporting": "Règlement et reporting personnalisés",
+        "prioritySupport": "Support prioritaire et options de SLA",
+        "integrationSupport": "Support d’intégration dédié",
+        "securityReview": "Revue de sécurité entreprise"
+      }
+    },
+    "multiLocationTitle": "Configuration multi-sites ?",
+    "multiLocationDescription": "Contactez-nous pour une tarification volume et un plan de déploiement.",
+    "contactSales": "Contacter les ventes",
+    "createAccount": "Créer un compte"
+  },
+  "Admin": {
+    "nav": {
+      "brand": "Crypto Pay",
+      "brandTagline": "Console admin",
+      "overview": "Vue d’ensemble",
+      "merchantOps": "Opérations marchands",
+      "insights": "Analyses",
+      "platform": "Plateforme",
+      "growth": "Croissance",
+      "superAdmin": "Super administrateur",
+      "dashboard": "Vue opérationnelle",
+      "walletReview": "Revue des portefeuilles de règlement",
+      "merchants": "Marchands",
+      "leads": "Leads et chat",
+      "analytics": "Analytique",
+      "settings": "Paramètres",
+      "notifications": "Notifications",
+      "security": "Sécurité",
+      "campaigns": "Campagnes email",
+      "automations": "Automatisations",
+      "templates": "Modèles",
+      "contacts": "Contacts",
+      "staff": "Gestion du personnel",
+      "audit": "Journaux d’audit",
+      "exitAdmin": "Revenir au site",
+      "comingSoon": "Bientôt disponible",
+      "comingSoonHint": "On y travaille — bientôt disponible"
+    },
+    "staff": {
+      "status": {
+        "active": "Active",
+        "pending": "Pending",
+        "inactive": "Inactive",
+        "suspended": "Suspended",
+        "no_membership": "No membership"
+      }
+    },
+    "dashboard": {
+      "title": "Vue opérationnelle",
+      "subtitle": "Examinez les portefeuilles de règlement, les marchands et les leads entrants.",
+      "pendingWallets": "Portefeuilles en attente de revue",
+      "verifiedWallets": "Portefeuilles de règlement vérifiés",
+      "merchantAccounts": "Comptes marchands",
+      "newLeadsToday": "Nouveaux leads aujourd’hui",
+      "reviewWallets": "Revoir les portefeuilles",
+      "viewMerchants": "Voir les marchands",
+      "openInbox": "Ouvrir la boîte de leads",
+      "quickActions": "Actions rapides"
+    },
+    "merchants": {
+      "title": "Marchands",
+      "description": "Comptes issus de Supabase — gérez les demandes de portefeuilles de règlement et contactez les marchands par email via Resend.",
+      "totalAccounts": "Comptes marchands",
+      "withWallets": "Avec portefeuilles de règlement",
+      "pendingRequests": "Demandes de portefeuilles en attente",
+      "reviewNow": "File de revue",
+      "searchPlaceholder": "Rechercher par nom, email ou entreprise…",
+      "loading": "Chargement des marchands…",
+      "empty": "Aucun marchand trouvé.",
+      "merchant": "Marchand",
+      "wallets": "Portefeuilles",
+      "pending": "En attente",
+      "joined": "Inscrit",
+      "actions": "Actions",
+      "verified": "vérifié",
+      "rejected": "rejeté",
+      "none": "Aucun",
+      "manage": "Gérer",
+      "unnamed": "Sans nom",
+      "paginationTotal": "{count} marchands",
+      "previous": "Précédent",
+      "next": "Suivant",
+      "pageOf": "Page {page} / {total}",
+      "backToList": "Retour aux marchands",
+      "notFound": "Marchand introuvable.",
+      "profileUpdated": "Profil mis à jour.",
+      "profileSection": "Profil",
+      "accountSection": "Compte",
+      "fullName": "Nom complet",
+      "phone": "Téléphone",
+      "company": "Entreprise",
+      "emailConfirmed": "Email confirmé",
+      "lastSignIn": "Dernière connexion",
+      "walletSummary": "Portefeuilles de règlement",
+      "total": "total",
+      "leads": "Prospects",
+      "no": "Non",
+      "unknown": "Inconnu",
+      "pendingBadge": "{count} en attente",
+      "accountToolsHint": "Les emails d’authentification et les actions de sécurité sont envoyés via Resend avec des liens Supabase.",
+      "accountTools": "Outils du compte",
+      "emailMerchant": "Envoyer un email au marchand",
+      "resendEmailVerification": "Renvoyer la vérification email",
+      "sendEmailVerification": "Envoyer la vérification email",
+      "sendPasswordReset": "Envoyer la réinitialisation du mot de passe",
+      "revokeSessions": "Révoquer toutes les sessions",
+      "deleteAccount": "Supprimer le compte marchand",
+      "resendWalletVerification": "Renvoyer la vérification du portefeuille",
+      "accountBanned": "Banni dans Supabase Auth",
+      "supabaseToolsTitle": "Outils Supabase et email",
+      "supabaseToolsDescription": "Auth Admin API (service role) + Resend pour la communication avec les marchands.",
+      "supabaseSnapshot": "Aperçu Supabase Auth",
+      "confirmEmailSupabase": "Confirmer l’email dans Supabase",
+      "syncAuthMetadata": "Synchroniser profil → métadonnées d’auth",
+      "banInSupabase": "Bannir dans Supabase",
+      "unbanInSupabase": "Débannir dans Supabase",
+      "filterAll": "Tous les marchands",
+      "filterPending": "En attente de revue",
+      "filterWithWallets": "Avec portefeuilles",
+      "filterNoWallets": "Pas encore de portefeuille",
+      "reviewWallets": "Revoir les portefeuilles",
+      "tabOverview": "Aperçu",
+      "tabWallets": "Portefeuilles de règlement",
+      "tabAccount": "Compte et auth",
+      "profileSectionHint": "Coordonnées affichées dans l’admin et dans les emails aux marchands.",
+      "accountSectionHint": "Connexion et activité de leads depuis Supabase.",
+      "walletsSectionTitle": "Portefeuilles de règlement",
+      "walletsSectionDescription": "Chaque marchand peut enregistrer plusieurs adresses de règlement. Dépliez un portefeuille pour l’examiner, l’approuver ou contacter le marchand.",
+      "walletsAccordionHint": "{count, plural, one {# wallet} other {# wallets}} · {pending, plural, =0 {aucun en attente} one {# en attente de revue} other {# en attente de revue}}",
+      "primaryWallet": "Principal",
+      "walletAddress": "Adresse",
+      "copyAddress": "Copier l’adresse",
+      "addressCopied": "Adresse copiée",
+      "requestedAt": "Soumis",
+      "approveWallet": "Approuver",
+      "rejectWallet": "Rejeter",
+      "resendVerification": "Renvoyer la vérification",
+      "askMerchant": "Envoyer un email au marchand",
+      "openReviewQueue": "File globale de revue",
+      "noWalletsYet": "Aucun portefeuille de règlement soumis pour l’instant.",
+      "walletsLoadFailed": "Impossible de charger les portefeuilles",
+      "resendFailed": "Échec de l’envoi",
+      "verificationSent": "Emails de vérification envoyés",
+      "verificationSentHint": "Les boîtes marchands et admin sont notifiées lorsque configurées.",
+      "walletUpdateFailed": "Échec de la mise à jour du portefeuille",
+      "walletStatusUpdated": "Portefeuille marqué {status}",
+      "merchantNotified": "Marchand notifié par email.",
+      "rejectionPrompt": "Motif de rejet (optionnel) :",
+      "rejectDialogTitle": "Rejeter le portefeuille",
+      "rejectDialogDescription": "Rejeter « {label} ». Le marchand verra votre note dans son tableau de bord et par email si les notifications sont activées.",
+      "rejectReasonLabel": "Motif du rejet (optionnel)",
+      "rejectReasonPlaceholder": "p. ex. Le format de l’adresse n’a pas pu être validé, ou ne correspond pas au réseau déclaré.",
+      "rejectReasonHint": "Laissez vide si aucune explication n’est nécessaire. 1 000 caractères maximum.",
+      "rejectConfirm": "Rejeter le portefeuille",
+      "rejectCancel": "Annuler",
+      "rejectionNoteLabel": "Note de rejet",
+      "rejectionNoteEmpty": "Aucun motif enregistré",
+      "walletEmailSubject": "Question à propos du portefeuille « {label} »"
+    }
+  },
+  "Auth": {
+    "welcomeBack": "Bon retour",
+    "welcomeBackWithName": "Bon retour, {name}",
+    "signInTitle": "Connectez-vous à votre compte",
+    "createAccountTitle": "Créez votre compte",
+    "newToBrand": "Nouveau sur Crypto Pay ?",
+    "createAccountLink": "Créer un compte",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "signInLink": "Se connecter",
+    "accountCreated": "Compte créé.",
+    "verifyEmailWith": "Nous avons envoyé un lien de confirmation à {email}. Vérifiez votre email, puis connectez-vous.",
+    "verifyEmailGeneric": "Nous avons envoyé un email de confirmation. Vérifiez votre email, puis connectez-vous.",
+    "resendConfirmation": "Renvoyer l’email de confirmation",
+    "resendingConfirmation": "Envoi…",
+    "resendConfirmationSent": "Si un compte existe pour cet email, un nouveau lien de confirmation a été envoyé.",
+    "resendConfirmationFailed": "Impossible de renvoyer pour le moment. Réessayez dans quelques minutes.",
+    "signInWithEmail": "Connectez-vous avec {email} pour continuer.",
+    "signInToDashboard": "Connectez-vous pour accéder à votre tableau de bord.",
+    "alreadySignedIn": "Vous êtes déjà connecté.",
+    "signedOutTitle": "Vous êtes déconnecté",
+    "signedOutHint": "Reconnectez-vous pour accéder à la console admin ou à un autre compte.",
+    "signedInHint": "Accédez à votre tableau de bord ou déconnectez-vous pour changer de compte.",
+    "continueToDashboard": "Continuer vers le tableau de bord",
+    "signOut": "Se déconnecter",
+    "alreadyLoggedInSignup": "Déjà connecté ?",
+    "signedInCreateNew": "Vous êtes actuellement connecté. Pour créer un nouveau compte avec un autre email,",
+    "signOutFirst": "déconnectez-vous d’abord",
+    "newHere": "Nouveau ici ?",
+    "newHereHint": "Créez votre compte avec votre email et votre mot de passe pour démarrer.",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phoneOptional": "Téléphone (facultatif)",
+    "password": "Mot de passe",
+    "emailPlaceholder": "Saisissez votre email",
+    "passwordPlaceholder": "Saisissez votre mot de passe",
+    "phonePlaceholder": "+33 6 12 34 56 78",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signIn": "Se connecter",
+    "signUp": "S’inscrire",
+    "termsFooter": "En continuant, vous acceptez nos",
+    "termsOfService": "Conditions d’utilisation",
+    "and": "et",
+    "privacyPolicy": "Politique de confidentialité",
+    "sendResetLink": "Envoyer le lien de réinitialisation",
+    "backToSignIn": "Retour à la connexion",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "securityCheckTitle": "Vérifiez que vous êtes humain",
+    "securityCheckHint": "Contrôle rapide propulsé par Cloudflare — se termine en une seconde.",
+    "securityCheckVerified": "Vérifié",
+    "securityCheckFailed": "Échec du contrôle",
+    "securityCheckRetry": "Veuillez refaire le contrôle, puis soumettre à nouveau.",
+    "securityCheckRequired": "Veuillez compléter le contrôle de sécurité avant de continuer.",
+    "tooManyAttempts": "Trop de tentatives. Patientez quelques minutes puis réessayez.",
+    "layout": {
+      "backToHome": "Retour à l'accueil",
+      "backToSite": "Retour au site"
+    }
+  },
+  "CookieConsent": {
+    "bannerTitle": "Préférences cookies",
+    "bannerDescription": "Nous utilisons des cookies pour les fonctions essentielles et l'analytique optionnelle.",
+    "cookiePolicy": "Politique cookies",
+    "acceptAll": "Tout accepter",
+    "essentialOnly": "Essentiels uniquement",
+    "customize": "Personnaliser",
+    "required": "Requis",
+    "toggleEnable": "Activer les cookies {name}",
+    "toggleDisable": "Désactiver les cookies {name}",
+    "viewDetails": "Voir les détails",
+    "hideDetails": "Masquer les détails",
+    "dialogDescription": "Choisissez les cookies optionnels autorisés. Les essentiels restent toujours actifs.",
+    "selectAll": "Tout sélectionner",
+    "savePreferences": "Enregistrer les préférences",
+    "settingsButton": "Paramètres cookies",
+    "categories": {
+      "essential": {
+        "name": "Strictement nécessaires",
+        "description": "Essentiels au fonctionnement du site. Requis pour la connexion sécurisée et l'authentification.",
+        "examples": {
+          "session": "Cookies de session",
+          "auth": "Jetons d'authentification",
+          "csrf": "Protection CSRF",
+          "loadBalancing": "Équilibrage de charge"
+        }
+      },
+      "functional": {
+        "name": "Fonctionnels",
+        "description": "Permettent des fonctions personnalisées et mémorisent vos préférences (langue, région, affichage).",
+        "examples": {
+          "language": "Préférences de langue",
+          "recent": "Éléments récemment consultés",
+          "theme": "Paramètres de thème",
+          "location": "Données de localisation"
+        }
+      },
+      "analytics": {
+        "name": "Analytique et performance",
+        "description": "Nous aident à comprendre comment les visiteurs utilisent le site de façon anonyme.",
+        "examples": {
+          "ga": "Google Analytics",
+          "pageViews": "Pages vues",
+          "sessionDuration": "Durée de session",
+          "errorTracking": "Suivi des erreurs",
+          "hotjar": "Hotjar"
+        }
+      },
+      "advertising": {
+        "name": "Publicité et marketing",
+        "description": "Servent à diffuser du contenu pertinent et mesurer les campagnes. Peuvent être définis par nos partenaires.",
+        "examples": {
+          "googleAds": "Google Ads",
+          "facebook": "Facebook Pixel",
+          "retargeting": "Reciblage",
+          "crossSite": "Suivi inter-sites",
+          "linkedin": "LinkedIn Insight"
+        }
+      }
+    }
+  },
+  "Faq": {
+    "meta": {
+      "title": "FAQ | Crypto Pay",
+      "description": "Questions fréquentes sur Crypto Pay — règlement wallet, actifs pris en charge, tarifs et intégration API.",
+      "ogTitle": "Crypto Pay — Questions fréquentes",
+      "ogDescription": "Réponses sur l'acceptation des paiements crypto avec Crypto Pay."
+    },
+    "hero": {
+      "eyebrow": "FAQ",
+      "title": "Réponses pour opérateurs et propriétaires",
+      "description": "Pour un flux unique, contactez-nous et nous concevrons un plan pour vous."
+    },
+    "cta": {
+      "title": "Encore des questions ?",
+      "description": "Contactez-nous, nous vous aiderons pour votre configuration.",
+      "button": "Contact"
+    },
+    "categories": {
+      "gettingStarted": "Premiers pas",
+      "payments": "Paiements",
+      "security": "Sécurité",
+      "developers": "Développeurs",
+      "pricing": "Tarifs",
+      "support": "Support"
+    },
+    "items": {
+      "whatIsCryptoPay": {
+        "question": "Qu'est-ce que Crypto Pay ?",
+        "answer": "Crypto Pay vous aide à suivre et accepter les paiements crypto. Les paiements vont directement sur votre wallet — nous sommes non custodial et orientés confidentialité."
+      },
+      "howFastSetup": {
+        "question": "En combien de temps puis-je configurer ?",
+        "answer": "La plupart des marchands connectent un wallet et créent un premier lien en quelques minutes. Les intégrations API prennent généralement quelques heures selon votre stack."
+      },
+      "whatDoINeed": {
+        "question": "De quoi ai-je besoin pour commencer ?",
+        "answer": "Une adresse wallet que vous contrôlez et un compte Crypto Pay. Pour un site personnalisé, une URL de callback ou un endpoint webhook pour les mises à jour de statut."
+      },
+      "supportedCoins": {
+        "question": "Quelles cryptos supportez-vous ?",
+        "answer": "Nous supportons BTC, ETH, LTC, USDT et USDC. D'autres actifs peuvent être ajoutés."
+      },
+      "wherePaymentsGo": {
+        "question": "Où vont les paiements ?",
+        "answer": "Directement sur votre wallet. Avec Crypto Pay, les fonds ne sont pas détenus sur un solde marchand groupé — le règlement est wallet à wallet."
+      },
+      "paymentStatus": {
+        "question": "Comment suivez-vous le statut du paiement ?",
+        "answer": "Nous surveillons la blockchain pour les transactions correspondant à votre demande. Le statut passe de non payé → en cours → payé."
+      },
+      "kycRequirements": {
+        "question": "Quelles sont vos exigences KYC ?",
+        "answer": "Comme nous ne traitons ni ne stockons les paiements, le KYC est limité et basé sur l'évaluation des risques — pas sur la custody de vos fonds."
+      },
+      "privateKeys": {
+        "question": "Avez-vous besoin de mes clés privées ?",
+        "answer": "Non. Vous ne fournissez qu'une adresse wallet publique. Crypto Pay ne demande jamais de clés privées."
+      },
+      "hasApi": {
+        "question": "Y a-t-il une API ?",
+        "answer": "Oui. Une API unifiée pour créer des charges, vérifier le statut et recevoir des callbacks webhook à la confirmation."
+      },
+      "websiteIntegration": {
+        "question": "Comment intégrer sur mon site ?",
+        "answer": "Utilisez des liens de paiement sans code, ou l'API REST et les webhooks pour un checkout personnalisé. Voir la page Développeurs."
+      },
+      "fees": {
+        "question": "Comment fonctionnent les frais ?",
+        "answer": "Le tarif standard est un frais de base de {percent} % par transaction réussie, facturé mensuellement — non déduit au checkout. Contactez-nous pour Business Scale."
+      },
+      "platformFees": {
+        "question": "Y a-t-il des frais de setup ou mensuels ?",
+        "answer": "Pas de frais plateforme cachés sur le plan standard. Vous payez lorsque vous recevez un paiement avec succès, selon nos tarifs publiés."
+      },
+      "supportIncluded": {
+        "question": "Quel support est inclus ?",
+        "answer": "Support onboarding par e-mail sur Standard. Business Scale inclut support prioritaire et SLA optionnel."
+      }
+    }
+  },
+  "DevelopersPage": {
+    "meta": {
+      "title": "Informations produit | Crypto Pay",
+      "description": "Comprendre comment fonctionne Crypto Pay, ce qui est disponible aujourd’hui et ce qui arrive ensuite."
+    },
+    "hero": {
+      "eyebrow": "Informations",
+      "title": "Comment fonctionne Crypto Pay",
+      "description": "Un aperçu simple du règlement, de la vérification des wallets et du déploiement progressif des fonctionnalités."
+    },
+    "blocks": {
+      "security": {
+        "title": "Sécurité d’abord",
+        "description": "Règlement non custodial et bonnes pratiques de sécurité du compte sur toute la plateforme."
+      },
+      "walletVerification": {
+        "title": "Vérification des wallets",
+        "description": "Les wallets de règlement sont examinés avant de pouvoir être utilisés pour le routage."
+      },
+      "gettingStarted": {
+        "title": "Bien démarrer",
+        "description": "Créez un compte, ajoutez un wallet de règlement et suivez le déploiement des fonctions de paiement."
+      }
+    },
+    "quickStart": {
+      "eyebrow": "Prochaines étapes",
+      "description": "Commencez par configurer votre wallet et découvrez le parcours de bout en bout. Le checkout et les liens arrivent ensuite.",
+      "howItWorks": "Comment ça marche",
+      "getStarted": "Bien démarrer"
+    },
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "description": "Créez un compte, ajoutez un wallet de règlement et contactez-nous si vous avez besoin d’aide.",
+      "apiDocs": "En savoir plus"
+    }
+  },
+  "HowItWorksPage": {
+    "meta": {
+      "title": "Comment fonctionne Crypto Pay",
+      "description": "Checkout crypto non custodial : wallet à wallet, suivi on-chain et webhooks."
+    },
+    "hero": {
+      "eyebrow": "Comment ça marche",
+      "title": "Suivez et acceptez les paiements crypto",
+      "description": "Orienté confidentialité. Wallet à wallet. Du premier lien au paiement confirmé."
+    },
+    "stepLabel": "ÉTAPE {step}",
+    "steps": {
+      "connectWallet": {
+        "title": "Connectez votre wallet",
+        "description": "Ajoutez l'adresse publique où vous souhaitez recevoir les paiements. Pas de clés privées — wallet à wallet."
+      },
+      "createPayment": {
+        "title": "Créez une demande de paiement",
+        "description": "Définissez le montant et la crypto. Partagez un lien ou créez un charge via l'API avec votre référence commande."
+      },
+      "customerPays": {
+        "title": "Le client paie on-chain",
+        "description": "Le checkout peut rester sur votre site. Nous détectons la transaction et le statut passe à en cours."
+      },
+      "confirmationCallback": {
+        "title": "Confirmation et callback",
+        "description": "Une fois le paiement confirmé on-chain, le statut devient payé et votre webhook ou tableau de bord se met à jour."
+      },
+      "reconcileExport": {
+        "title": "Rapprochement et export",
+        "description": "Consultez l'historique des paiements dans votre compte et exportez les enregistrements pour la comptabilité."
+      }
+    },
+    "cta": {
+      "title": "Prêt à commencer ?",
+      "description": "Rejoignez-nous pour un checkout crypto fluide — configuré en quelques minutes.",
+      "apiDocs": "Documentation API"
+    }
+  },
+  "GetStartedPage": {
+    "meta": {
+      "title": "Commencer",
+      "description": "Acceptez les paiements crypto avec un plan de déploiement simple."
+    },
+    "hero": {
+      "eyebrow": "Commencer",
+      "title": "Lancez votre checkout crypto en un sprint court",
+      "description": "Suivez ce parcours pour passer de la configuration au premier paiement en direct rapidement."
+    },
+    "stepLabel": "Étape {step}",
+    "checklist": {
+      "1": "Créez votre compte et vérifiez les informations de votre entreprise",
+      "2": "Connectez votre wallet de paiement",
+      "3": "Générez votre premier lien de paiement",
+      "4": "Testez le flux avec une petite transaction",
+      "5": "Passez en production et suivez les confirmations dans le tableau de bord"
+    },
+    "cta": {
+      "createAccount": "Créer votre compte",
+      "talkToOnboarding": "Parler à l'onboarding"
+    }
+  },
+  "AboutPage": {
+    "meta": {
+      "title": "À propos | Crypto Pay",
+      "description": "Découvrez Crypto Pay — paiements crypto non custodial, règlement wallet à wallet et outils marchands orientés confidentialité.",
+      "ogTitle": "Notre histoire : Crypto Pay",
+      "ogDescription": "Pour les marchands qui veulent un règlement direct en wallet sans custodie groupée."
+    },
+    "hero": {
+      "eyebrow": "À propos",
+      "title": "Paiements crypto sans prendre en custody",
+      "description": "Crypto Pay aide les marchands à accepter et suivre les paiements on-chain tandis que les fonds sont réglés directement sur leurs wallets.",
+      "bookDemo": "Réserver une démo",
+      "contactSales": "Contacter les ventes"
+    },
+    "mission": {
+      "title": "Notre mission",
+      "body": "Rendre le checkout crypto aussi simple que les passerelles carte — sans détenir les fonds marchands ni ajouter de complexité inutile.",
+      "tagline": "Au service des marchands en ligne, équipes SaaS et marketplaces dans le monde entier."
+    },
+    "stats": {
+      "merchants": {
+        "value": "500+",
+        "label": "Marchands intégrés"
+      },
+      "uptime": {
+        "value": "99,9 %",
+        "label": "Disponibilité plateforme"
+      },
+      "setup": {
+        "value": "Minutes",
+        "label": "Temps de configuration typique"
+      },
+      "assets": {
+        "value": "5+",
+        "label": "Actifs pris en charge"
+      }
+    },
+    "values": {
+      "title": "Nos valeurs",
+      "subtitle": "Ce qui nous anime au quotidien",
+      "merchantFirst": {
+        "title": "Marchand d'abord",
+        "description": "Règlement direct en wallet et statut transparent — pas de soldes groupés."
+      },
+      "privacy": {
+        "title": "Orienté confidentialité",
+        "description": "Le checkout reste sur votre site. Nous suivons l'état du paiement, pas les PII inutiles."
+      },
+      "developerReady": {
+        "title": "Prêt pour les développeurs",
+        "description": "Liens de paiement, charges, webhooks et intégration Runner pour stacks personnalisées."
+      }
+    },
+    "milestones": {
+      "title": "Notre parcours",
+      "2024Launch": {
+        "year": "2024",
+        "title": "Lancement plateforme",
+        "description": "Comptes marchands, vérification des wallets de paiement et handshake API Runner."
+      },
+      "2025Runner": {
+        "year": "2025",
+        "title": "Intégration Runner",
+        "description": "Extension de l'API Edge HMAC et webhooks sortants pour les changements de statut wallet."
+      },
+      "2026Checkout": {
+        "year": "2026",
+        "title": "Feuille de route checkout",
+        "description": "Liens de paiement, API charges et webhooks de confirmation on-chain pour les marchands."
+      }
+    },
+    "cta": {
+      "title": "Prêt à accepter la crypto ?",
+      "description": "Créez un compte, connectez un wallet et démarrez votre plan de déploiement.",
+      "getStarted": "Commencer",
+      "contact": "Nous contacter"
+    }
+  },
+  "ContactPage": {
+    "channels": {
+      "sales": {
+        "title": "Ventes + onboarding",
+        "copy": "Nouveaux marchands, démos et questions tarifaires."
+      },
+      "integration": {
+        "title": "Support intégration",
+        "copy": "API, webhooks et aide checkout personnalisé."
+      },
+      "support": {
+        "title": "Support",
+        "copy": "Compte, wallets et assistance opérationnelle."
+      }
+    },
+    "locationCounts": {
+      "1": "1 site",
+      "2-5": "2-5 sites",
+      "6-10": "6-10 sites",
+      "11-25": "11-25 sites",
+      "25+": "25+ sites"
+    },
+    "interests": {
+      "paymentLinks": "Liens de paiement",
+      "apiIntegration": "Intégration API",
+      "walletVerification": "Vérification wallet",
+      "customCheckout": "Checkout personnalisé",
+      "volumePricing": "Tarification volume"
+    },
+    "errors": {
+      "nameRequired": "Le nom est requis",
+      "emailRequired": "L'e-mail est requis",
+      "emailInvalid": "Veuillez entrer un e-mail valide",
+      "companyRequired": "Le nom de l'entreprise est requis",
+      "messageRequired": "Parlez-nous de vos besoins"
+    },
+    "success": {
+      "title": "Merci de nous avoir contactés !",
+      "emailClient": "Votre client mail devrait s'être ouvert avec votre message. Sinon, écrivez-nous directement à",
+      "responseTime": "Nous répondons généralement sous 24 heures.",
+      "sendAnother": "Envoyer un autre message"
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Planifions votre déploiement checkout crypto.",
+      "description": "Parlez-nous de votre activité, besoins d'intégration et calendrier. Nous répondrons avec un plan d'onboarding sur mesure.",
+      "startOnboarding": "Démarrer l'onboarding",
+      "viewPricing": "Voir les tarifs"
+    },
+    "info": {
+      "office": "Bureau",
+      "officeLocation": "Los Angeles, CA (équipe remote-first)",
+      "responseTime": "Délai de réponse",
+      "responseTimeDetail": "Sous 24 h les jours ouvrables"
+    },
+    "form": {
+      "eyebrow": "Envoyer une demande",
+      "namePlaceholder": "Votre nom *",
+      "emailPlaceholder": "Adresse e-mail *",
+      "phonePlaceholder": "Téléphone (facultatif)",
+      "companyPlaceholder": "Nom de l'entreprise *",
+      "locationsLabel": "Nombre de sites",
+      "interestsLabel": "Qu'est-ce qui vous intéresse ?",
+      "messagePlaceholder": "Parlez-nous de votre activité et de vos besoins *",
+      "submit": "Envoyer la demande",
+      "submitHint": "Nous répondrons sous 24 h avec un plan personnalisé.",
+      "notProvided": "Non fourni",
+      "notSpecified": "Non précisé",
+      "emailSubject": "Demande de contact de {company}"
+    },
+    "demo": {
+      "eyebrow": "Vous préférez une démo ?",
+      "title": "Planifiez une démo de 20 minutes du portail avec notre équipe.",
+      "bookDemo": "Réserver une démo"
+    }
+  },
+  "CryptoConverter": {
+    "eyebrow": "Convertisseur en direct",
+    "subtitle": "Crypto vers fiat en temps réel selon les cours du marché",
+    "refreshRates": "Actualiser les cours",
+    "errorLoadRates": "Impossible de charger les cours",
+    "labels": {
+      "amount": "Montant",
+      "cryptocurrency": "Cryptomonnaie",
+      "localCurrency": "Devise locale"
+    },
+    "rateLine": "{amount} {symbol} · 1 {symbol} = {unitPrice}"
+  },
+  "Legal": {
+    "terms": {
+      "eyebrow": "Mentions légales",
+      "title": "Conditions d’utilisation",
+      "metaTitle": "Conditions d’utilisation | Crypto Pay",
+      "metaDescription": "Conditions d’utilisation de Crypto Pay — acceptation de paiements crypto non dépositaires, comptes marchands et usage de l’API.",
+      "openGraphTitle": "Crypto Pay — Conditions d’utilisation",
+      "openGraphDescription": "Conditions marchands pour accepter les paiements en cryptomonnaie avec règlement portefeuille à portefeuille.",
+      "lastUpdated": "Dernière mise à jour : {date}",
+      "footerNote": "En utilisant Crypto Pay, vous reconnaissez avoir lu, compris et accepté ces Conditions d’utilisation."
+    },
+    "privacy": {
+      "eyebrow": "Mentions légales",
+      "title": "Politique de confidentialité",
+      "metaTitle": "Politique de confidentialité | Crypto Pay",
+      "metaDescription": "Comment Crypto Pay collecte, utilise et protège les données marchands et de transaction pour les services de paiement crypto.",
+      "openGraphTitle": "Crypto Pay — Politique de confidentialité",
+      "openGraphDescription": "Pratiques de confidentialité pour les marchands utilisant Crypto Pay pour accepter et suivre les paiements en cryptomonnaie.",
+      "lastUpdated": "Dernière mise à jour : {date}",
+      "footerNote": "Cette Politique de confidentialité décrit comment nous traitons les informations lorsque vous utilisez Crypto Pay."
+    }
+  }
+}
