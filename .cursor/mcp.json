@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    }
+  },
+  "disabledServers": {
+    "awslabs.aws-api-mcp-server": {},
+    "awslabs.aws-iac-mcp-server": {},
+    "awslabs.aws-knowledge-mcp-server": {},
+    "awslabs.aws-terraform-mcp-server": {},
+    "claude-flow": {},
+    "plugin-supabase-supabase": {},
+    "plugin-notion-workspace-notion": {},
+    "plugin-figma-figma": {},
+    "plugin-tavily-tavily": {},
+    "plugin-huggingface-skills-huggingface-skills": {},
+    "plugin-twilio-developer-kit-twilio-docs": {}
+  }
+}

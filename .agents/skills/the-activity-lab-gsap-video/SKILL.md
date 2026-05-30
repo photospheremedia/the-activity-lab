@@ -1,11 +1,11 @@
 ---
-name: wild-traverse-gsap-video
-description: Build cinematic GSAP hero sections for Wild Traverse (4K-style crossfades, camera motion, and scene transitions) in React + Vite.
+name: the-activity-lab-gsap-video
+description: Build cinematic GSAP hero sections for The Activity Lab (4K-style crossfades, camera motion, and scene transitions) in React + Vite.
 version: 1.0.0
 risk_level: LOW
 ---
 
-# Wild Traverse GSAP Video Skill
+# The Activity Lab GSAP Video Skill
 
 Use this skill when the user asks for:
 - cinematic hero animation

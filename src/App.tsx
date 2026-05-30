@@ -15,7 +15,7 @@ import { SectionLink } from './components/SectionLink'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL ?? 'hello@theactivitylab.com'
+import { PUBLIC_CONTACT_EMAIL, submitContactForm } from './lib/contact'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -1537,20 +1537,12 @@ function Contact() {
     setStatus('submitting')
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: JSON.stringify({
-          name: data.get('name'),
-          email: data.get('email'),
-          destination: data.get('destination') || 'Not specified',
-          message: data.get('message') || 'No additional details',
-          _subject: 'The Activity Lab — New trip inquiry',
-          _template: 'table',
-        }),
+      await submitContactForm({
+        name: String(data.get('name') ?? ''),
+        email: String(data.get('email') ?? ''),
+        destination: String(data.get('destination') || 'Not specified'),
+        message: String(data.get('message') || 'No additional details'),
       })
-
-      if (!response.ok) throw new Error('Submit failed')
 
       form.reset()
       setStatus('success')
@@ -1581,8 +1573,8 @@ function Contact() {
               <p>{t('Formats: private guided, team retreat, milestone expedition')}</p>
               <p>
                 {t('Prefer email?')}{' '}
-                <a className="font-semibold text-clay-300 hover:text-clay-200" href={`mailto:${CONTACT_EMAIL}`}>
-                  {CONTACT_EMAIL}
+                <a className="font-semibold text-clay-300 hover:text-clay-200" href={`mailto:${PUBLIC_CONTACT_EMAIL}`}>
+                  {PUBLIC_CONTACT_EMAIL}
                 </a>
               </p>
             </div>
@@ -1650,8 +1642,8 @@ function Contact() {
               {status === 'error' && (
                 <p className="text-sm text-red-300" role="alert">
                   {t('Something went wrong. Please try again or email us at')}{' '}
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-red-200">
-                    {CONTACT_EMAIL}
+                  <a href={`mailto:${PUBLIC_CONTACT_EMAIL}`} className="underline hover:text-red-200">
+                    {PUBLIC_CONTACT_EMAIL}
                   </a>
                   .
                 </p>

@@ -1,0 +1,38 @@
+---
+description: PhotoSphere-only accounts in this repo — same credentials as Crypto Pay
+alwaysApply: true
+---
+
+# The Activity Lab — account scope
+
+This workspace is **PhotoSphere production** only. Use the same accounts as **crypto-pay** (`~/Projects/crypto-pay`).
+
+## Use in this repo
+
+| Tool | Account / path |
+|------|----------------|
+| GitHub CLI / git push | `photospheremedia` (active `gh` account) |
+| GitHub remote | `photospheremedia/the-activity-lab` |
+| Vercel CLI / MCP | `photospheremedia` (when deployed) |
+
+## Do not use here
+
+- **Skullcandyxxx** — personal GitHub; not for this repo
+- **Parent-folder MCPs** from `~/Projects/.cursor/mcp.json` (AWS, claude-flow) — disabled in `.cursor/mcp.json`
+
+## Verify GitHub
+
+```bash
+gh auth status          # active account → photospheremedia
+git remote -v           # origin → photospheremedia/the-activity-lab
+git config user.name    # photospheremedia (this repo)
+```
+
+If push fails with Skullcandy permissions:
+
+```bash
+gh auth switch --user photospheremedia
+gh auth setup-git
+```
+
+See `~/Projects/crypto-pay/docs/CURSOR_ACCOUNTS.md` for the full PhotoSphere vs Skullcandy map.
