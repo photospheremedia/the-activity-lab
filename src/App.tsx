@@ -1,12 +1,21 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
+import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { prefersReducedMotion } from './lib/motion'
-import { scrollToContact } from './lib/scroll'
+import { scrollToContact, scrollToSection } from './lib/scroll'
+import { EXPERIENCE_DETAILS } from './lib/experiences'
+import { useI18n } from './i18n'
+import { LanguageSwitcher } from './LanguageSwitcher'
+import { InfoPage, INFO_PAGES } from './InfoPage'
+import { ExperiencePage } from './ExperiencePage'
+import { Footer } from './Footer'
+import { ExperienceModal } from './components/ExperienceModal'
+import { SectionLink } from './components/SectionLink'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL ?? 'hello@wildtraverse.com'
+const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL ?? 'hello@theactivitylab.com'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -33,38 +42,11 @@ function PlanTripButton({
 const NAV_LINKS = [
   { href: '#experiences', label: 'Activities' },
   { href: '#destinations', label: 'Destinations' },
+  { href: '#team', label: 'Team' },
   { href: '#contact', label: 'Contact' },
 ]
 
-const EXPERIENCES = [
-  {
-    kicker: 'Trek',
-    title: 'Guided Hikes',
-    description:
-      'From volcano summits in Mexico to alpine ridgelines in Patagonia — expert-led treks for every skill level.',
-    image:
-      'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1400&q=80',
-    meta: ['All skill levels', 'Half-day to multi-day', 'Certified guides'],
-  },
-  {
-    kicker: 'Adventure',
-    title: 'Outdoor Activities',
-    description:
-      'Kayaking, rock climbing, canyon rappelling, and wildlife encounters — curated for thrill and safety.',
-    image:
-      'https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1000&q=80',
-    meta: ['Water & rock', 'Small groups', 'Safety-first'],
-  },
-  {
-    kicker: 'Expedition',
-    title: 'Immersive Journeys',
-    description:
-      'Multi-day expeditions that blend culture, cuisine, and landscape — travel that stays with you.',
-    image:
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=80',
-    meta: ['5–10 days', 'Culture + nature', 'Fully guided'],
-  },
-]
+const EXPERIENCES = EXPERIENCE_DETAILS
 
 const DESTINATIONS = [
   {
@@ -157,6 +139,46 @@ const JOURNEY_STEPS = [
 
 const ABOUT_CREDENTIALS = ['Since 2011', 'Oaxaca-based', 'Certified guides', '2,500+ travelers']
 
+const TEAM = [
+  {
+    name: 'Lucía Moreno',
+    role: 'Founder & Lead Guide',
+    location: 'Oaxaca, Mexico',
+    bio: 'Built the company after 12 seasons guiding Mexico\u2019s highland volcanoes. IFMGA-certified.',
+    tags: ['High-altitude', 'Route design'],
+    image:
+      'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Daniel Reyes',
+    role: 'Head of Route Design',
+    location: 'Mexico City, Mexico',
+    bio: 'Maps every itinerary day-by-day, balancing weather windows, terrain, and recovery.',
+    tags: ['Logistics', 'Weather windows'],
+    image:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Kenji Watanabe',
+    role: 'Lead Mountain Guide',
+    location: 'Patagonia partner base',
+    bio: 'Leads our toughest alpine traverses with a calm, safety-first approach to big terrain.',
+    tags: ['Alpine', 'Technical climbs'],
+    image:
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    name: 'Sofía Navarro',
+    role: 'Guest Experience Lead',
+    location: 'Guatemala City, Guatemala',
+    bio: 'Your point of contact from first call to summit day, handling every detail end to end.',
+    tags: ['Concierge', 'Local culture'],
+    image:
+      'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80',
+  },
+]
+
+
 const TESTIMONIALS = [
   {
     quote:
@@ -218,6 +240,7 @@ const GALLERY_IMAGES = [
 ]
 
 function Nav() {
+  const { t } = useI18n()
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -275,42 +298,48 @@ function Nav() {
           className="h-full origin-left scale-x-0 bg-gradient-to-r from-clay-400 via-clay-300 to-sand-100"
         />
       </div>
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
       <nav
-        className={`mx-auto mt-4 flex max-w-6xl items-center justify-between rounded-full border px-6 py-3.5 transition-all duration-300 ${
+        className={`mt-4 flex items-center justify-between rounded-full border px-5 py-3 transition-all duration-300 sm:px-6 sm:py-3.5 ${
           scrolled || menuOpen
             ? 'border-white/12 bg-forest-950/75 shadow-[0_10px_40px_rgba(6,18,15,0.35)] backdrop-blur-xl'
             : 'border-white/12 bg-forest-950/40 backdrop-blur-md'
         }`}
       >
-        <a
-          href="#"
+        <Link
+          to="/"
           className="font-display text-xl font-semibold tracking-tight text-sand-100 transition-opacity hover:opacity-80"
         >
           The Activity Lab
-        </a>
+        </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-7 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
                 className="group relative text-sm font-medium text-sand-100/75 transition-colors hover:text-sand-100"
               >
-                {link.label}
+                {t(link.label)}
                 <span className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-clay-300 transition-transform duration-300 ease-out group-hover:scale-x-100" />
               </a>
             </li>
           ))}
           <li>
+            <LanguageSwitcher />
+          </li>
+          <li>
             <PlanTripButton className="rounded-full bg-sand-100 px-5 py-2 text-sm font-semibold text-forest-950 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_8px_24px_rgba(245,240,232,0.25)]">
-              Plan a trip
+              {t('Plan a trip')}
             </PlanTripButton>
           </li>
         </ul>
 
+        <div className="flex items-center gap-3 md:hidden">
+        <LanguageSwitcher />
         <button
           type="button"
-          className="flex flex-col gap-1.5 md:hidden"
+          className="flex flex-col gap-1.5"
           aria-label="Toggle menu"
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -324,10 +353,11 @@ function Nav() {
             className={`block h-0.5 w-6 bg-sand-100 transition-transform ${menuOpen ? '-translate-y-2 -rotate-45' : ''}`}
           />
         </button>
+        </div>
       </nav>
 
       {menuOpen && (
-        <div className="mx-4 mt-3 rounded-2xl border border-white/10 bg-forest-950/95 px-6 py-6 backdrop-blur-xl md:hidden">
+        <div className="mt-3 rounded-2xl border border-white/10 bg-forest-950/95 px-6 py-6 backdrop-blur-xl md:hidden">
           <ul className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
@@ -336,7 +366,7 @@ function Nav() {
                   className="text-lg font-medium text-sand-100"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  {t(link.label)}
                 </a>
               </li>
             ))}
@@ -345,17 +375,19 @@ function Nav() {
                 className="inline-block rounded-full bg-sand-100 px-5 py-2.5 text-sm font-semibold text-forest-950"
                 onNavigate={() => setMenuOpen(false)}
               >
-                Plan a trip
+                {t('Plan a trip')}
               </PlanTripButton>
             </li>
           </ul>
         </div>
       )}
+      </div>
     </header>
   )
 }
 
 function Hero() {
+  const { t } = useI18n()
   const heroRef = useRef<HTMLElement | null>(null)
   const backdropRefs = useRef<Array<HTMLDivElement | null>>([])
 
@@ -531,34 +563,34 @@ function Hero() {
             className="mb-5 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.22em] text-clay-200"
           >
             <span data-hero-divider className="inline-block h-px w-10 origin-left bg-clay-300" />
-            Travel and Adventure
+            {t('Travel and Adventure')}
           </p>
           <h1 className="font-display max-w-3xl text-5xl font-bold leading-[1.03] tracking-tight text-sand-100 md:text-7xl">
             <span className="block overflow-hidden pb-[0.06em]">
               <span data-hero-line className="block">
-                Bespoke adventure journeys,
+                {t('Bespoke adventure journeys,')}
               </span>
             </span>
             <span className="block overflow-hidden pb-[0.06em]">
               <span data-hero-line className="block">
-                crafted for real explorers.
+                {t('crafted for real explorers.')}
               </span>
             </span>
           </h1>
           <p data-hero-reveal className="mt-6 max-w-xl text-lg leading-relaxed text-sand-100/88">
-            From volcanic summits in Mexico to iconic trails worldwide, The Activity Lab designs
-            guided hikes and outdoor experiences that balance challenge, safety, and streamlined
-            logistics for professionals with limited time.
+            {t(
+              'From volcanic summits in Mexico to iconic trails worldwide, The Activity Lab designs guided hikes and outdoor experiences that balance challenge, safety, and streamlined logistics for professionals with limited time.',
+            )}
           </p>
           <div data-hero-reveal className="mt-9 flex flex-wrap gap-4">
             <PlanTripButton className="rounded-full bg-sand-100 px-8 py-3.5 text-sm font-semibold text-forest-950 transition-colors hover:bg-white">
-              Start your adventure
+              {t('Start your adventure')}
             </PlanTripButton>
             <a
               href="#experiences"
               className="rounded-full border border-sand-100/60 px-8 py-3.5 text-sm font-semibold text-sand-100 transition-colors hover:border-sand-100 hover:bg-white/15"
             >
-              See activities
+              {t('See activities')}
             </a>
           </div>
           <div data-hero-reveal className="mt-10 flex flex-wrap gap-3">
@@ -567,7 +599,7 @@ function Hero() {
                 key={badge}
                 className="rounded-full border border-sand-100/35 bg-white/18 px-3 py-1 text-xs font-medium text-sand-100/90 backdrop-blur-sm"
               >
-                {badge}
+                {t(badge)}
               </span>
             ))}
           </div>
@@ -575,20 +607,20 @@ function Hero() {
 
         <div data-hero-reveal data-hero-cards className="grid gap-4 [will-change:transform]">
           <article className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-md transition-colors hover:bg-white/15">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sand-100/75">Featured trip</p>
-            <p className="font-display mt-3 text-3xl text-sand-100">Mexico Highlands Traverse</p>
-            <p className="mt-2 text-sm text-sand-100/88">Six days of guided ridge hikes, canyon routes, and cultural immersion</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sand-100/75">{t('Featured trip')}</p>
+            <p className="font-display mt-3 text-3xl text-sand-100">{t('Mexico Highlands Traverse')}</p>
+            <p className="mt-2 text-sm text-sand-100/88">{t('Six days of guided ridge hikes, canyon routes, and cultural immersion')}</p>
           </article>
           <div className="grid gap-4 sm:grid-cols-2">
             <article className="rounded-2xl border border-white/12 bg-forest-900/55 p-5">
-              <p className="text-xs uppercase tracking-[0.16em] text-sand-100/70">Destinations</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-sand-100/70">{t('Destinations')}</p>
               <p className="mt-2 font-display text-4xl text-clay-300">12+</p>
-              <p className="text-xs text-sand-100/80">Mexico and worldwide locations</p>
+              <p className="text-xs text-sand-100/80">{t('Mexico and worldwide locations')}</p>
             </article>
             <article className="rounded-2xl border border-white/12 bg-forest-900/55 p-5">
-              <p className="text-xs uppercase tracking-[0.16em] text-sand-100/70">Guided trips</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-sand-100/70">{t('Guided trips')}</p>
               <p className="mt-2 font-display text-4xl text-clay-300">40+</p>
-              <p className="text-xs text-sand-100/80">Curated hikes and active expeditions</p>
+              <p className="text-xs text-sand-100/80">{t('Curated hikes and active expeditions')}</p>
             </article>
           </div>
         </div>
@@ -600,7 +632,7 @@ function Hero() {
           className="flex flex-col items-center gap-2 text-xs uppercase tracking-widest text-sand-100/75"
           aria-label="Scroll to experiences"
         >
-          Scroll
+          {t('Scroll')}
           <svg className="h-5 w-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
           </svg>
@@ -611,21 +643,23 @@ function Hero() {
 }
 
 function ProfessionalFocus() {
+  const { t } = useI18n()
   return (
     <section className="scroll-mt-24 bg-white py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-700">
-              Built for professionals
+              {t('Built for professionals')}
             </p>
             <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-forest-950 md:text-5xl">
-              What serious travelers actually optimize for.
+              {t('What serious travelers actually optimize for.')}
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-forest-950/78">
-            Research-backed priorities: less friction, better safety, smaller groups, and clearer
-            planning confidence before booking.
+            {t(
+              'Research-backed priorities: less friction, better safety, smaller groups, and clearer planning confidence before booking.',
+            )}
           </p>
         </div>
 
@@ -636,8 +670,8 @@ function ProfessionalFocus() {
               data-reveal
               className="rounded-2xl border border-forest-950/10 bg-sand-50 p-6"
             >
-              <h3 className="font-display text-2xl text-forest-950">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-forest-950/80">{item.detail}</p>
+              <h3 className="font-display text-2xl text-forest-950">{t(item.title)}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-forest-950/80">{t(item.detail)}</p>
             </article>
           ))}
         </div>
@@ -676,6 +710,7 @@ const EXPEDITION_CHAPTERS = [
 const TRAIL_VIEWBOX = { w: 1000, h: 600 }
 
 function JourneyFilm() {
+  const { t } = useI18n()
   const sectionRef = useRef<HTMLElement | null>(null)
   const [activeChapter, setActiveChapter] = useState(0)
 
@@ -873,13 +908,13 @@ function JourneyFilm() {
               data-film-reveal
               className="text-xs font-semibold uppercase tracking-[0.28em] text-sand-100/85"
             >
-              Expedition film
+              {t('Expedition film')}
             </p>
             <span
               data-film-reveal
               className="rounded-full border border-sand-100/30 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-sand-100 backdrop-blur-sm"
             >
-              Scroll to travel
+              {t('Scroll to travel')}
             </span>
           </div>
 
@@ -890,13 +925,13 @@ function JourneyFilm() {
               style={{ textShadow: '0 2px 22px rgba(6,18,15,0.55)' }}
             >
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-200">
-                {chapter.tag}
+                {t(chapter.tag)}
               </p>
               <h2 className="font-display mt-3 text-4xl font-bold leading-[1.04] tracking-tight text-sand-50 md:text-6xl">
-                {chapter.title}
+                {t(chapter.title)}
               </h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-sand-100/90">
-                {chapter.copy}
+                {t(chapter.copy)}
               </p>
             </div>
 
@@ -913,7 +948,7 @@ function JourneyFilm() {
                   <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sand-100/70">
                     {`0${index + 1}`}
                   </span>
-                  <span className="mt-1 block text-sm font-semibold text-sand-50">{item.title}</span>
+                  <span className="mt-1 block text-sm font-semibold text-sand-50">{t(item.title)}</span>
                 </div>
               ))}
             </div>
@@ -935,24 +970,28 @@ function JourneyFilm() {
 }
 
 function Experiences() {
+  const { t } = useI18n()
+  const [activeSlug, setActiveSlug] = useState<string | null>(null)
+
   return (
     <section id="experiences" className="scroll-mt-24 bg-sand-50 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-700">
-              What we offer
+              {t('What we offer')}
             </p>
             <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-forest-950 md:text-5xl">
-              Signature experiences for every style of adventurer.
+              {t('Signature experiences for every style of adventurer.')}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-forest-950/82">
-              Join day hikes, multi-day trekking routes, and technical outdoor activities led by
-              expert guides and tailored to your pace.
+              {t(
+                'Join day hikes, multi-day trekking routes, and technical outdoor activities led by expert guides and tailored to your pace.',
+              )}
             </p>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-forest-950/78">
-            Every itinerary is personalized, safety-first, and built around meaningful local insight.
+            {t('Every itinerary is personalized, safety-first, and built around meaningful local insight.')}
           </p>
         </div>
 
@@ -961,7 +1000,16 @@ function Experiences() {
             <article
               key={exp.title}
               data-reveal
-              className="group relative isolate flex min-h-[420px] overflow-hidden rounded-3xl ring-1 ring-forest-950/10 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_70px_rgba(15,31,26,0.24)] md:min-h-[520px]"
+              role="button"
+              tabIndex={0}
+              onClick={() => setActiveSlug(exp.slug)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault()
+                  setActiveSlug(exp.slug)
+                }
+              }}
+              className="group relative isolate flex min-h-[420px] cursor-pointer overflow-hidden rounded-3xl ring-1 ring-forest-950/10 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_30px_70px_rgba(15,31,26,0.24)] md:min-h-[520px]"
             >
               <img
                 src={exp.image}
@@ -981,14 +1029,14 @@ function Experiences() {
 
               <div className="relative flex h-full w-full flex-col justify-end p-7 md:p-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-clay-200">
-                  {exp.kicker}
+                  {t(exp.kicker)}
                 </p>
                 <h3 className="font-display mt-2 text-2xl font-semibold text-sand-50 md:text-3xl">
-                  {exp.title}
+                  {t(exp.title)}
                 </h3>
                 <span className="mt-3 block h-px w-10 origin-left bg-clay-300 transition-transform duration-500 group-hover:scale-x-[2.4]" />
                 <p className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/85">
-                  {exp.description}
+                  {t(exp.description)}
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -997,45 +1045,49 @@ function Experiences() {
                       key={item}
                       className="rounded-full border border-sand-100/25 bg-white/10 px-2.5 py-1 text-[11px] font-medium text-sand-100/90 backdrop-blur-sm"
                     >
-                      {item}
+                      {t(item)}
                     </span>
                   ))}
                 </div>
 
-                <p className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-sand-50">
-                  Explore
+                <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-sand-50">
+                  {t('Explore')}
                   <span
                     aria-hidden
-                    className="transition-transform duration-300 group-hover:translate-x-1.5"
+                    className="transition-transform duration-300 group-hover:translate-x-1.5 rtl:group-hover:-translate-x-1.5"
                   >
                     &gt;
                   </span>
-                </p>
+                </span>
               </div>
             </article>
           ))}
         </div>
       </div>
+
+      <ExperienceModal slug={activeSlug} onClose={() => setActiveSlug(null)} />
     </section>
   )
 }
 
 function Destinations() {
+  const { t } = useI18n()
   return (
     <section id="destinations" className="scroll-mt-24 bg-forest-950 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-400">
-              Destinations
+              {t('Destinations')}
             </p>
             <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-sand-100 md:text-5xl">
-              Mexico at the core, the world within reach.
+              {t('Mexico at the core, the world within reach.')}
             </h2>
           </div>
           <p className="max-w-sm text-sand-100/82">
-            We specialize in Mexico's most compelling landscapes while also curating guided journeys
-            across globally renowned adventure regions.
+            {t(
+              "We specialize in Mexico's most compelling landscapes while also curating guided journeys across globally renowned adventure regions.",
+            )}
           </p>
         </div>
 
@@ -1075,22 +1127,22 @@ function Destinations() {
                   className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-clay-200"
                   style={{ textShadow: '0 1px 12px rgba(7,16,13,0.6)' }}
                 >
-                  {dest.kicker}
+                  {t(dest.kicker)}
                   {dest.highlight && (
                     <span className="rounded-full bg-sand-100 px-2.5 py-0.5 text-[10px] tracking-[0.16em] text-forest-950">
-                      Featured
+                      {t('Featured')}
                     </span>
                   )}
                 </p>
                 <h3 className="font-display mt-2 text-3xl font-bold text-sand-100 md:text-4xl">
-                  {dest.region}
+                  {t(dest.region)}
                 </h3>
                 <span className="mt-3 block h-px w-10 origin-left bg-clay-300 transition-transform duration-500 group-hover:scale-x-[2.4]" />
                 <p
                   className="mt-4 max-w-md text-sm leading-relaxed text-sand-100/85"
                   style={{ textShadow: '0 1px 14px rgba(7,16,13,0.55)' }}
                 >
-                  {dest.blurb}
+                  {t(dest.blurb)}
                 </p>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {dest.places.map((place) => (
@@ -1098,23 +1150,23 @@ function Destinations() {
                       key={place}
                       className="rounded-full border border-sand-100/25 bg-white/10 px-3 py-1 text-[13px] text-sand-100/90 backdrop-blur-sm transition-colors duration-300 group-hover:border-sand-100/40"
                     >
-                      {place}
+                      {t(place)}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-6">
-                  <a
-                    href="#contact"
+                  <SectionLink
+                    section="contact"
                     className="inline-flex items-center gap-2 rounded-full border border-sand-100/45 bg-white/14 px-4 py-2 text-sm font-semibold text-sand-100 backdrop-blur-sm transition-all duration-300 hover:bg-white/24"
                   >
-                    Plan this trip
+                    {t('Plan this trip')}
                     <span
                       aria-hidden
-                      className="transition-transform duration-300 group-hover:translate-x-1"
+                      className="transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
                     >
                       -&gt;
                     </span>
-                  </a>
+                  </SectionLink>
                 </div>
               </div>
             </article>
@@ -1126,6 +1178,7 @@ function Destinations() {
 }
 
 function VisualGallery() {
+  const { t } = useI18n()
   const galleryRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
@@ -1191,18 +1244,19 @@ function VisualGallery() {
   }, [])
 
   return (
-    <section ref={galleryRef} className="scroll-mt-24 bg-sand-50 py-24 md:py-32">
+    <section id="gallery" ref={galleryRef} className="scroll-mt-24 bg-sand-50 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-700">Photo journal</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-700">{t('Photo journal')}</p>
             <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-forest-950 md:text-5xl">
-              More places. More visual depth.
+              {t('More places. More visual depth.')}
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-forest-950/78">
-            A premium gallery strip inspired by modern cover pages, with cinematic parallax and
-            richer destination storytelling.
+            {t(
+              'A premium gallery strip inspired by modern cover pages, with cinematic parallax and richer destination storytelling.',
+            )}
           </p>
         </div>
 
@@ -1225,9 +1279,9 @@ function VisualGallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-forest-950/92 via-forest-950/28 to-transparent" />
               <div className="relative flex h-full flex-col justify-end p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.17em] text-sand-100/82">
-                  {item.location}
+                  {t(item.location)}
                 </p>
-                <h3 className="font-display mt-2 text-2xl leading-tight text-sand-100">{item.title}</h3>
+                <h3 className="font-display mt-2 text-2xl leading-tight text-sand-100">{t(item.title)}</h3>
               </div>
             </article>
           ))}
@@ -1238,24 +1292,27 @@ function VisualGallery() {
 }
 
 function About() {
+  const { t } = useI18n()
   return (
     <section id="about" className="scroll-mt-24 bg-sand-100 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-20">
           <div data-reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-700">
-              About
+              {t('About')}
             </p>
             <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-forest-950 md:text-5xl">
-              Local expertise, global adventure standards.
+              {t('Local expertise, global adventure standards.')}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-forest-950/82">
-              We build active travel experiences for people who want more than sightseeing — real
-              movement, real terrain, and memorable places.
+              {t(
+                'We build active travel experiences for people who want more than sightseeing — real movement, real terrain, and memorable places.',
+              )}
             </p>
             <p className="mt-4 text-lg leading-relaxed text-forest-950/82">
-              With deep roots in Mexico and trusted partners worldwide, we deliver guided journeys
-              that feel both authentic and meticulously organized.
+              {t(
+                'With deep roots in Mexico and trusted partners worldwide, we deliver guided journeys that feel both authentic and meticulously organized.',
+              )}
             </p>
 
             <ul className="mt-8 flex flex-wrap gap-2.5">
@@ -1264,7 +1321,7 @@ function About() {
                   key={item}
                   className="rounded-full border border-forest-950/12 bg-white px-4 py-2 text-sm font-medium text-forest-950/80 shadow-sm"
                 >
-                  {item}
+                  {t(item)}
                 </li>
               ))}
             </ul>
@@ -1280,15 +1337,15 @@ function About() {
               <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-clay-200">
-                    On the trail
+                    {t('On the trail')}
                   </p>
                   <p className="font-display mt-1 text-xl text-sand-50">
-                    Real terrain, expertly guided.
+                    {t('Real terrain, expertly guided.')}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-center backdrop-blur-md">
                   <p className="font-display text-2xl leading-none text-sand-50">98%</p>
-                  <p className="mt-1 text-[11px] font-medium text-sand-100/85">Would return</p>
+                  <p className="mt-1 text-[11px] font-medium text-sand-100/85">{t('Would return')}</p>
                 </div>
               </div>
             </div>
@@ -1296,10 +1353,10 @@ function About() {
 
           <div className="relative pl-2 md:pl-0">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-700">
-              How it works
+              {t('How it works')}
             </p>
             <h3 className="font-display mt-3 text-2xl font-semibold text-forest-950 md:text-3xl">
-              Three phases from idea to trailhead.
+              {t('Three phases from idea to trailhead.')}
             </h3>
 
             <ol className="relative mt-8 space-y-5">
@@ -1319,15 +1376,15 @@ function About() {
                   <div className="flex-1 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-forest-950/5 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_18px_45px_rgba(15,31,26,0.12)]">
                     <div className="flex items-center justify-between gap-3">
                       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-clay-700">
-                        Phase 0{index + 1}
+                        {t('Phase')} 0{index + 1}
                       </p>
                       <span className="rounded-full bg-sand-50 px-2.5 py-1 text-[11px] font-medium text-forest-950/70 ring-1 ring-forest-950/8">
-                        {step.meta}
+                        {t(step.meta)}
                       </span>
                     </div>
-                    <p className="font-display mt-2 text-2xl text-forest-950">{step.title}</p>
+                    <p className="font-display mt-2 text-2xl text-forest-950">{t(step.title)}</p>
                     <p className="mt-2 text-sm leading-relaxed text-forest-950/80">
-                      {step.description}
+                      {t(step.description)}
                     </p>
                   </div>
                 </li>
@@ -1340,7 +1397,83 @@ function About() {
   )
 }
 
+function Team() {
+  const { t } = useI18n()
+  return (
+    <section id="team" className="scroll-mt-24 bg-sand-50 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-700">{t('Our team')}</p>
+            <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-forest-950 md:text-5xl">
+              {t('The people behind every expedition.')}
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-forest-950/82">
+              {t(
+                'A small, certified crew of guides and planners who live in the regions we travel — and obsess over the details so you do not have to.',
+              )}
+            </p>
+          </div>
+          <p className="max-w-sm text-sm leading-relaxed text-forest-950/78">
+            {t(
+              'Every trip is led by a named guide you will meet before departure. No anonymous handoffs, ever.',
+            )}
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {TEAM.map((member) => (
+            <article key={member.name} data-reveal className="group">
+              <div className="relative overflow-hidden rounded-2xl ring-1 ring-forest-950/10">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  loading="lazy"
+                  className="aspect-[3/4] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-950/85 via-forest-950/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-x-4 bottom-4 flex translate-y-2 flex-wrap gap-1.5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  {member.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-sand-100/30 bg-white/15 px-2.5 py-1 text-[11px] font-medium text-sand-50 backdrop-blur-sm"
+                    >
+                      {t(tag)}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-4">
+                <h3 className="font-display text-xl font-semibold text-forest-950">{member.name}</h3>
+                <p className="mt-1 text-sm font-semibold text-clay-700">{t(member.role)}</p>
+                <p className="mt-1 flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.12em] text-forest-950/55">
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-3.5 w-3.5 text-clay-500"
+                  >
+                    <path
+                      d="M12 21s7-5.686 7-11a7 7 0 1 0-14 0c0 5.314 7 11 7 11Z"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    />
+                    <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
+                  </svg>
+                  {t(member.location)}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-forest-950/75">{t(member.bio)}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Testimonial() {
+  const { t } = useI18n()
   return (
     <section className="relative overflow-hidden bg-forest-950 py-24 md:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(212,137,106,0.22),transparent_40%)]" />
@@ -1348,16 +1481,16 @@ function Testimonial() {
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div data-reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand-100">
-              Traveler stories
+              {t('Traveler stories')}
             </p>
             <h3 className="font-display mt-3 text-4xl font-bold tracking-tight text-sand-100">
-              Experiences that earn repeat travelers.
+              {t('Experiences that earn repeat travelers.')}
             </h3>
             <div className="mt-8 grid grid-cols-2 gap-3">
               {STATS.map((stat) => (
                 <div key={stat.label} className="rounded-xl border border-white/30 bg-white/18 p-4">
                   <p className="font-display text-3xl text-sand-50">{stat.value}</p>
-                  <p className="mt-1 text-xs font-medium text-sand-100">{stat.label}</p>
+                  <p className="mt-1 text-xs font-medium text-sand-100">{t(stat.label)}</p>
                 </div>
               ))}
             </div>
@@ -1372,10 +1505,10 @@ function Testimonial() {
                   index === 0 ? 'md:col-span-2' : ''
                 }`}
               >
-                <p className="text-base leading-relaxed text-sand-100/90">&ldquo;{item.quote}&rdquo;</p>
+                <p className="text-base leading-relaxed text-sand-100/90">&ldquo;{t(item.quote)}&rdquo;</p>
                 <footer className="mt-4 text-sm">
                   <span className="font-semibold text-clay-300">{item.name}</span>
-                  <span className="text-sand-100/78"> · {item.trip}</span>
+                  <span className="text-sand-100/78"> · {t(item.trip)}</span>
                 </footer>
               </blockquote>
             ))}
@@ -1387,6 +1520,7 @@ function Testimonial() {
 }
 
 function Contact() {
+  const { t } = useI18n()
   const [status, setStatus] = useState<FormStatus>('idle')
 
   useEffect(() => {
@@ -1431,21 +1565,22 @@ function Contact() {
         <div className="grid gap-10 rounded-3xl border border-white/10 bg-gradient-to-br from-forest-950 to-forest-900 p-8 md:p-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay-300">
-              Contact
+              {t('Contact')}
             </p>
             <h2 className="font-display mt-3 text-4xl font-bold tracking-tight text-sand-100 md:text-5xl">
-              Tell us where adventure should take you next.
+              {t('Tell us where adventure should take you next.')}
             </h2>
             <p className="mt-4 text-lg text-sand-100/88">
-              Share your goals, dates, and experience level. We turn that into a practical, expert
-              guided plan designed for busy professionals and high-expectation travelers.
+              {t(
+                'Share your goals, dates, and experience level. We turn that into a practical, expert guided plan designed for busy professionals and high-expectation travelers.',
+              )}
             </p>
             <div className="mt-8 space-y-3 text-sm text-sand-100/85">
-              <p>Response target: within 1 business day</p>
-              <p>Trip planning options from approximately $1,900 per traveler</p>
-              <p>Formats: private guided, team retreat, milestone expedition</p>
+              <p>{t('Response target: within 1 business day')}</p>
+              <p>{t('Trip planning options from approximately $1,900 per traveler')}</p>
+              <p>{t('Formats: private guided, team retreat, milestone expedition')}</p>
               <p>
-                Prefer email?{' '}
+                {t('Prefer email?')}{' '}
                 <a className="font-semibold text-clay-300 hover:text-clay-200" href={`mailto:${CONTACT_EMAIL}`}>
                   {CONTACT_EMAIL}
                 </a>
@@ -1457,7 +1592,7 @@ function Contact() {
                   key={signal}
                   className="rounded-full border border-sand-100/30 bg-white/10 px-3 py-1 text-xs font-medium text-sand-100"
                 >
-                  {signal}
+                  {t(signal)}
                 </span>
               ))}
             </div>
@@ -1465,36 +1600,37 @@ function Contact() {
 
           {status === 'success' ? (
             <div className="rounded-2xl border border-clay-500/30 bg-white/5 p-8 text-center">
-              <p className="font-display text-2xl font-semibold text-sand-100">You are on the list!</p>
+              <p className="font-display text-2xl font-semibold text-sand-100">{t('You are on the list!')}</p>
               <p className="mt-3 text-sand-100/85">
-                Thanks for reaching out. We will review your trip details and get back to you within
-                1-2 business days.
+                {t(
+                  'Thanks for reaching out. We will review your trip details and get back to you within 1-2 business days.',
+                )}
               </p>
               <button
                 type="button"
                 onClick={() => setStatus('idle')}
                 className="mt-6 text-sm font-semibold text-clay-400 transition-colors hover:text-clay-500"
               >
-                Send another inquiry
+                {t('Send another inquiry')}
               </button>
             </div>
           ) : (
             <form className="space-y-4" onSubmit={handleSubmit}>
               <p className="text-xs font-medium text-sand-100/85">
-                Trusted by 2,500+ adventurers. Small groups. Local certified guides.
+                {t('Trusted by 2,500+ adventurers. Small groups. Local certified guides.')}
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your name"
+                  placeholder={t('Your name')}
                   required
                   className="rounded-xl border border-sand-100/10 bg-white/5 px-4 py-3 text-sand-100 placeholder:text-sand-100/40 focus:border-clay-500 focus:outline-none focus:ring-1 focus:ring-clay-500"
                 />
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email address"
+                  placeholder={t('Email address')}
                   required
                   className="rounded-xl border border-sand-100/10 bg-white/5 px-4 py-3 text-sand-100 placeholder:text-sand-100/40 focus:border-clay-500 focus:outline-none focus:ring-1 focus:ring-clay-500"
                 />
@@ -1502,18 +1638,18 @@ function Contact() {
               <input
                 type="text"
                 name="destination"
-                placeholder="Dream destination (for example Oaxaca, Patagonia)"
+                placeholder={t('Dream destination (for example Oaxaca, Patagonia)')}
                 className="w-full rounded-xl border border-sand-100/10 bg-white/5 px-4 py-3 text-sand-100 placeholder:text-sand-100/40 focus:border-clay-500 focus:outline-none focus:ring-1 focus:ring-clay-500"
               />
               <textarea
                 name="message"
                 rows={4}
-                placeholder="Tell us about your group, dates, and experience level"
+                placeholder={t('Tell us about your group, dates, and experience level')}
                 className="w-full resize-none rounded-xl border border-sand-100/10 bg-white/5 px-4 py-3 text-sand-100 placeholder:text-sand-100/40 focus:border-clay-500 focus:outline-none focus:ring-1 focus:ring-clay-500"
               />
               {status === 'error' && (
                 <p className="text-sm text-red-300" role="alert">
-                  Something went wrong. Please try again or email us at{' '}
+                  {t('Something went wrong. Please try again or email us at')}{' '}
                   <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-red-200">
                     {CONTACT_EMAIL}
                   </a>
@@ -1525,7 +1661,7 @@ function Contact() {
                 disabled={status === 'submitting'}
                 className="w-full rounded-full bg-sand-100 py-3.5 text-sm font-semibold text-forest-950 transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-10"
               >
-                {status === 'submitting' ? 'Sending...' : 'Send inquiry'}
+                {status === 'submitting' ? t('Sending...') : t('Send inquiry')}
               </button>
             </form>
           )}
@@ -1535,26 +1671,16 @@ function Contact() {
   )
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-white/5 bg-forest-950 py-12">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
-        <div className="text-center md:text-left">
-          <p className="font-display text-lg font-semibold text-sand-100">The Activity Lab</p>
-          <p className="mt-1 text-sm text-sand-100/40">
-            Hikes and guided adventures worldwide
-          </p>
-        </div>
-        <p className="text-sm text-sand-100/30">
-          &copy; {new Date().getFullYear()} The Activity Lab. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  )
-}
-
-export default function App() {
+function Landing() {
   const appRef = useRef<HTMLDivElement | null>(null)
+  const location = useLocation()
+
+  useEffect(() => {
+    if (!location.hash) return
+    const id = location.hash.replace('#', '')
+    const timer = window.setTimeout(() => scrollToSection(id), 120)
+    return () => window.clearTimeout(timer)
+  }, [location.pathname, location.hash])
 
   useEffect(() => {
     if (!appRef.current) return
@@ -1603,10 +1729,24 @@ export default function App() {
         <Destinations />
         <VisualGallery />
         <About />
+        <Team />
         <Testimonial />
         <Contact />
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/experiences/:slug" element={<ExperiencePage />} />
+      {INFO_PAGES.map((page) => (
+        <Route key={page.slug} path={`/${page.slug}`} element={<InfoPage />} />
+      ))}
+      <Route path="*" element={<Landing />} />
+    </Routes>
   )
 }
