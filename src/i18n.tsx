@@ -259,8 +259,8 @@ const es: Dict = {
   'Sending...': 'Enviando...',
   'Send inquiry': 'Enviar consulta',
   // Footer
-  'Certified, small-group hikes and guided adventures rooted in Mexico and run with trusted partners worldwide. Real terrain, meticulously organized.':
-    'Caminatas certificadas en grupos pequeños y aventuras guiadas con raíces en México y operadas con socios de confianza en todo el mundo. Terreno real, meticulosamente organizado.',
+  'Certified, small-group hikes and guided adventures worldwide. Real terrain, meticulously organized.':
+    'Caminatas certificadas en grupos pequeños y aventuras guiadas en todo el mundo. Terreno real, meticulosamente organizado.',
   'Trail notes newsletter': 'Boletín «Notas del sendero»',
   Subscribe: 'Suscribirse',
   'One thoughtful email a month. No spam, unsubscribe anytime.':
@@ -653,8 +653,8 @@ const fr: Dict = {
     'Une erreur s’est produite. Réessayez ou écrivez-nous à',
   'Sending...': 'Envoi...',
   'Send inquiry': 'Envoyer la demande',
-  'Certified, small-group hikes and guided adventures rooted in Mexico and run with trusted partners worldwide. Real terrain, meticulously organized.':
-    'Des randonnées certifiées en petits groupes et des aventures guidées enracinées au Mexique, menées avec des partenaires de confiance dans le monde entier. Du vrai terrain, organisé avec minutie.',
+  'Certified, small-group hikes and guided adventures worldwide. Real terrain, meticulously organized.':
+    'Randonnées certifiées en petits groupes et aventures guidées dans le monde entier. Du vrai terrain, organisé avec minutie.',
   'Trail notes newsletter': 'Newsletter « Carnet de sentier »',
   Subscribe: 'S’abonner',
   'One thoughtful email a month. No spam, unsubscribe anytime.':
@@ -1031,8 +1031,8 @@ const ar: Dict = {
   'Something went wrong. Please try again or email us at': 'حدث خطأ ما. حاول مجددًا أو راسلنا على',
   'Sending...': 'جارٍ الإرسال...',
   'Send inquiry': 'إرسال الاستفسار',
-  'Certified, small-group hikes and guided adventures rooted in Mexico and run with trusted partners worldwide. Real terrain, meticulously organized.':
-    'رحلات مشي معتمدة في مجموعات صغيرة ومغامرات موجَّهة متجذّرة في المكسيك وتُدار مع شركاء موثوقين حول العالم. تضاريس حقيقية، منظَّمة بدقّة.',
+  'Certified, small-group hikes and guided adventures worldwide. Real terrain, meticulously organized.':
+    'رحلات مشي معتمدة في مجموعات صغيرة ومغامرات موجَّهة حول العالم. تضاريس حقيقية، منظَّمة بدقّة.',
   'Trail notes newsletter': 'نشرة «ملاحظات المسار»',
   Subscribe: 'اشترك',
   'One thoughtful email a month. No spam, unsubscribe anytime.':
