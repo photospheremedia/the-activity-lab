@@ -2,6 +2,12 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useI18n } from './i18n'
 
+const FOOTER_CONTACT = {
+  name: 'Salim Spai',
+  phoneTel: '+14387639268',
+  phoneDisplay: '+1 (438) 763-9268',
+} as const
+
 export function Footer() {
   const { t } = useI18n()
   const [subscribed, setSubscribed] = useState(false)
@@ -18,6 +24,19 @@ export function Footer() {
               'Certified, small-group hikes and guided adventures worldwide. Real terrain, meticulously organized.',
             )}
           </p>
+
+          <div className="mt-6 max-w-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sand-100/70">
+              {t('Contact')}
+            </p>
+            <p className="mt-2 font-display text-lg text-sand-100">{FOOTER_CONTACT.name}</p>
+            <a
+              href={`tel:${FOOTER_CONTACT.phoneTel}`}
+              className="mt-1 inline-block text-sm text-clay-300 transition-colors hover:text-clay-200"
+            >
+              {FOOTER_CONTACT.phoneDisplay}
+            </a>
+          </div>
 
           {subscribed ? (
             <div className="mt-6 max-w-sm rounded-2xl border border-emerald-500/25 bg-emerald-500/10 p-5">
