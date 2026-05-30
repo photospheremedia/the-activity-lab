@@ -4,6 +4,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from 'react'
@@ -25,7 +26,6 @@ const es: Dict = {
   // Nav
   Activities: 'Actividades',
   Destinations: 'Destinos',
-  Team: 'Equipo',
   Contact: 'Contacto',
   'Plan a trip': 'Planea un viaje',
   // Hero
@@ -176,58 +176,12 @@ const es: Dict = {
     'Cuéntanos en 3 minutos tu terreno preferido, tu ritmo y tu nivel de comodidad.',
   Design: 'Diseña',
   '48-hour turnaround': 'Respuesta en 48 horas',
-  'Our route team drafts a cinematic day-by-day itinerary with weather windows.':
-    'Nuestro equipo de rutas elabora un itinerario día a día, cinematográfico y con ventanas climáticas.',
+  'We draft a cinematic day-by-day itinerary with weather windows.':
+    'Diseñamos un itinerario cinematográfico día a día con ventanas climáticas.',
   Deliver: 'Entrega',
   'Trip-ready brief': 'Dossier listo para viajar',
   'You get a ready-to-run trip brief with logistics, safety, and local contacts.':
     'Recibes un dossier de viaje listo para usar con logística, seguridad y contactos locales.',
-  // Team
-  'Our team': 'Nuestro equipo',
-  'The people behind every expedition.': 'Las personas detrás de cada expedición.',
-  'A small, certified crew of guides and planners who live in the regions we travel — and obsess over the details so you do not have to.':
-    'Un equipo reducido y certificado de guías y planificadores que viven en las regiones que recorremos, y que cuidan cada detalle para que tú no tengas que hacerlo.',
-  'Every trip is led by a named guide you will meet before departure. No anonymous handoffs, ever.':
-    'Cada viaje lo dirige un guía con nombre y apellido a quien conocerás antes de partir. Nada de relevos anónimos, nunca.',
-  'Founder & Lead Guide': 'Fundadora y guía principal',
-  'Head of Route Design': 'Director de diseño de rutas',
-  'Lead Mountain Guide': 'Guía de montaña principal',
-  'Guest Experience Lead': 'Responsable de experiencia del cliente',
-  'Mexico City, Mexico': 'Ciudad de México, México',
-  'Patagonia partner base': 'Base asociada en la Patagonia',
-  'Guatemala City, Guatemala': 'Ciudad de Guatemala, Guatemala',
-  'Built the company after 12 seasons guiding Mexico’s highland volcanoes. IFMGA-certified.':
-    'Fundó la empresa tras 12 temporadas guiando los volcanes de altura de México. Certificada IFMGA.',
-  'Maps every itinerary day-by-day, balancing weather windows, terrain, and recovery.':
-    'Traza cada itinerario día a día, equilibrando ventanas climáticas, terreno y descanso.',
-  'Leads our toughest alpine traverses with a calm, safety-first approach to big terrain.':
-    'Dirige nuestras travesías alpinas más exigentes con un enfoque sereno y centrado en la seguridad en terreno grande.',
-  'Your point of contact from first call to summit day, handling every detail end to end.':
-    'Tu punto de contacto desde la primera llamada hasta el día de cumbre, gestionando cada detalle de principio a fin.',
-  'High-altitude': 'Gran altitud',
-  'Route design': 'Diseño de rutas',
-  Logistics: 'Logística',
-  'Weather windows': 'Ventanas climáticas',
-  Alpine: 'Alpino',
-  'Technical climbs': 'Ascensos técnicos',
-  Concierge: 'Conserjería',
-  'Local culture': 'Cultura local',
-  // Testimonials
-  'Traveler stories': 'Historias de viajeros',
-  'Experiences that earn repeat travelers.': 'Experiencias que hacen volver a los viajeros.',
-  'Guided expeditions': 'Expediciones guiadas',
-  'Countries & counting': 'Países y subiendo',
-  'Adventurers led': 'Aventureros guiados',
-  'Years of expertise': 'Años de experiencia',
-  'The route planning felt like having a production team behind our trek. Every transition between locations was seamless.':
-    'La planificación de la ruta fue como tener un equipo de producción detrás de nuestra travesía. Cada transición entre lugares fue impecable.',
-  'The Activity Lab gave us a premium expedition feel without tourist chaos. It felt precise and personal.':
-    'The Activity Lab nos dio una sensación de expedición premium sin el caos turístico. Fue preciso y personal.',
-  'From first call to summit day, every detail was thought through. The visual itinerary was insanely useful.':
-    'Desde la primera llamada hasta el día de cumbre, cada detalle estaba pensado. El itinerario visual fue increíblemente útil.',
-  'Patagonia Traverse': 'Travesía por la Patagonia',
-  'Oaxaca + Chiapas': 'Oaxaca + Chiapas',
-  'Copper Canyon Loop': 'Circuito Barrancas del Cobre',
   // Contact
   'Tell us where adventure should take you next.':
     'Cuéntanos a dónde debería llevarte la próxima aventura.',
@@ -430,7 +384,6 @@ const es: Dict = {
 const fr: Dict = {
   Activities: 'Activités',
   Destinations: 'Destinations',
-  Team: 'Équipe',
   Contact: 'Contact',
   'Plan a trip': 'Planifier un voyage',
   'Travel and Adventure': 'Voyage et aventure',
@@ -574,56 +527,12 @@ const fr: Dict = {
     'Indiquez-nous en 3 minutes votre terrain préféré, votre rythme et votre niveau de confort.',
   Design: 'Concevoir',
   '48-hour turnaround': 'Réponse sous 48 heures',
-  'Our route team drafts a cinematic day-by-day itinerary with weather windows.':
-    'Notre équipe d’itinéraires élabore un programme jour par jour, cinématographique, avec des fenêtres météo.',
+  'We draft a cinematic day-by-day itinerary with weather windows.':
+    'Nous concevons un itinéraire cinématographique jour après jour avec des fenêtres météo.',
   Deliver: 'Livrer',
   'Trip-ready brief': 'Dossier prêt à partir',
   'You get a ready-to-run trip brief with logistics, safety, and local contacts.':
     'Vous recevez un dossier de voyage clé en main avec logistique, sécurité et contacts locaux.',
-  'Our team': 'Notre équipe',
-  'The people behind every expedition.': 'Les personnes derrière chaque expédition.',
-  'A small, certified crew of guides and planners who live in the regions we travel — and obsess over the details so you do not have to.':
-    'Une petite équipe certifiée de guides et de planificateurs qui vivent dans les régions que nous parcourons — et soignent chaque détail pour que vous n’ayez pas à le faire.',
-  'Every trip is led by a named guide you will meet before departure. No anonymous handoffs, ever.':
-    'Chaque voyage est mené par un guide identifié que vous rencontrerez avant le départ. Jamais de relais anonymes.',
-  'Founder & Lead Guide': 'Fondatrice et guide principale',
-  'Head of Route Design': 'Responsable de la conception d’itinéraires',
-  'Lead Mountain Guide': 'Guide de montagne principal',
-  'Guest Experience Lead': 'Responsable de l’expérience client',
-  'Mexico City, Mexico': 'Mexico, Mexique',
-  'Patagonia partner base': 'Base partenaire en Patagonie',
-  'Guatemala City, Guatemala': 'Guatemala, Guatemala',
-  'Built the company after 12 seasons guiding Mexico’s highland volcanoes. IFMGA-certified.':
-    'A fondé l’entreprise après 12 saisons à guider les volcans d’altitude du Mexique. Certifiée IFMGA.',
-  'Maps every itinerary day-by-day, balancing weather windows, terrain, and recovery.':
-    'Cartographie chaque itinéraire jour par jour, en équilibrant fenêtres météo, terrain et récupération.',
-  'Leads our toughest alpine traverses with a calm, safety-first approach to big terrain.':
-    'Mène nos traversées alpines les plus exigeantes avec une approche calme et axée sur la sécurité.',
-  'Your point of contact from first call to summit day, handling every detail end to end.':
-    'Votre interlocutrice du premier appel au jour du sommet, gérant chaque détail de bout en bout.',
-  'High-altitude': 'Haute altitude',
-  'Route design': 'Conception d’itinéraires',
-  Logistics: 'Logistique',
-  'Weather windows': 'Fenêtres météo',
-  Alpine: 'Alpin',
-  'Technical climbs': 'Ascensions techniques',
-  Concierge: 'Conciergerie',
-  'Local culture': 'Culture locale',
-  'Traveler stories': 'Témoignages de voyageurs',
-  'Experiences that earn repeat travelers.': 'Des expériences qui fidélisent les voyageurs.',
-  'Guided expeditions': 'Expéditions guidées',
-  'Countries & counting': 'Pays et plus encore',
-  'Adventurers led': 'Aventuriers accompagnés',
-  'Years of expertise': 'Années d’expertise',
-  'The route planning felt like having a production team behind our trek. Every transition between locations was seamless.':
-    'La planification de l’itinéraire, c’était comme avoir une équipe de production derrière notre trek. Chaque transition entre les lieux était fluide.',
-  'The Activity Lab gave us a premium expedition feel without tourist chaos. It felt precise and personal.':
-    'The Activity Lab nous a offert une expédition haut de gamme sans le chaos touristique. C’était précis et personnel.',
-  'From first call to summit day, every detail was thought through. The visual itinerary was insanely useful.':
-    'Du premier appel au jour du sommet, chaque détail était pensé. L’itinéraire visuel était incroyablement utile.',
-  'Patagonia Traverse': 'Traversée de Patagonie',
-  'Oaxaca + Chiapas': 'Oaxaca + Chiapas',
-  'Copper Canyon Loop': 'Boucle du Canyon du Cuivre',
   'Tell us where adventure should take you next.':
     'Dites-nous où l’aventure devrait vous emmener ensuite.',
   'Share your goals, dates, and experience level. We turn that into a practical, expert guided plan designed for busy professionals and high-expectation travelers.':
@@ -814,7 +723,6 @@ const fr: Dict = {
 const ar: Dict = {
   Activities: 'الأنشطة',
   Destinations: 'الوجهات',
-  Team: 'الفريق',
   Contact: 'اتصل بنا',
   'Plan a trip': 'خطّط لرحلة',
   'Travel and Adventure': 'السفر والمغامرة',
@@ -955,56 +863,12 @@ const ar: Dict = {
     'أخبرنا خلال 3 دقائق عن التضاريس المفضّلة لديك وإيقاعك ومستوى راحتك.',
   Design: 'نصمّم',
   '48-hour turnaround': 'إنجاز خلال 48 ساعة',
-  'Our route team drafts a cinematic day-by-day itinerary with weather windows.':
-    'يضع فريق المسارات لدينا برنامجًا يوميًا سينمائيًا مع نوافذ مناخية.',
+  'We draft a cinematic day-by-day itinerary with weather windows.':
+    'نصمّم برنامجًا يوميًا بطابع سينمائي مع نوافذ مناخية.',
   Deliver: 'نسلّم',
   'Trip-ready brief': 'ملخّص جاهز للرحلة',
   'You get a ready-to-run trip brief with logistics, safety, and local contacts.':
     'تحصل على ملخّص رحلة جاهز للتنفيذ يشمل اللوجستيات والسلامة وجهات الاتصال المحلّية.',
-  'Our team': 'فريقنا',
-  'The people behind every expedition.': 'الأشخاص خلف كل رحلة.',
-  'A small, certified crew of guides and planners who live in the regions we travel — and obsess over the details so you do not have to.':
-    'فريق صغير ومعتمد من المرشدين والمخطّطين يعيشون في المناطق التي نزورها — ويهتمّون بكل التفاصيل لتستريح أنت.',
-  'Every trip is led by a named guide you will meet before departure. No anonymous handoffs, ever.':
-    'كل رحلة يقودها مرشد بالاسم ستلتقي به قبل الانطلاق. لا تسليمات مجهولة، أبدًا.',
-  'Founder & Lead Guide': 'المؤسِّسة والمرشدة الرئيسية',
-  'Head of Route Design': 'مدير تصميم المسارات',
-  'Lead Mountain Guide': 'مرشد الجبال الرئيسي',
-  'Guest Experience Lead': 'مسؤولة تجربة الضيوف',
-  'Mexico City, Mexico': 'مكسيكو سيتي، المكسيك',
-  'Patagonia partner base': 'قاعدة شريكة في باتاغونيا',
-  'Guatemala City, Guatemala': 'مدينة غواتيمالا، غواتيمالا',
-  'Built the company after 12 seasons guiding Mexico’s highland volcanoes. IFMGA-certified.':
-    'أسّست الشركة بعد 12 موسمًا من إرشاد براكين المرتفعات في المكسيك. معتمدة من IFMGA.',
-  'Maps every itinerary day-by-day, balancing weather windows, terrain, and recovery.':
-    'يرسم كل برنامج يومًا بيوم، موازنًا بين النوافذ المناخية والتضاريس والتعافي.',
-  'Leads our toughest alpine traverses with a calm, safety-first approach to big terrain.':
-    'يقود أصعب عبوراتنا الألبية بنهج هادئ يضع السلامة أولًا في التضاريس الكبيرة.',
-  'Your point of contact from first call to summit day, handling every detail end to end.':
-    'نقطة تواصلك من أول مكالمة حتى يوم القمّة، تتولّى كل تفصيل من البداية إلى النهاية.',
-  'High-altitude': 'ارتفاعات عالية',
-  'Route design': 'تصميم المسارات',
-  Logistics: 'اللوجستيات',
-  'Weather windows': 'النوافذ المناخية',
-  Alpine: 'ألبي',
-  'Technical climbs': 'تسلّقات تقنية',
-  Concierge: 'خدمة الكونسيرج',
-  'Local culture': 'الثقافة المحلّية',
-  'Traveler stories': 'قصص المسافرين',
-  'Experiences that earn repeat travelers.': 'تجارب تجعل المسافرين يعودون.',
-  'Guided expeditions': 'رحلات موجَّهة',
-  'Countries & counting': 'دول وأكثر',
-  'Adventurers led': 'مغامرون قُدنا رحلاتهم',
-  'Years of expertise': 'سنوات من الخبرة',
-  'The route planning felt like having a production team behind our trek. Every transition between locations was seamless.':
-    'بدا تخطيط المسار وكأنّ فريق إنتاج يقف خلف رحلتنا. كان كل انتقال بين المواقع سلسًا.',
-  'The Activity Lab gave us a premium expedition feel without tourist chaos. It felt precise and personal.':
-    'منحنا The Activity Lab إحساسًا برحلة استكشافية راقية بلا فوضى سياحية. كان دقيقًا وشخصيًا.',
-  'From first call to summit day, every detail was thought through. The visual itinerary was insanely useful.':
-    'من أول مكالمة حتى يوم القمّة، كان كل تفصيل مدروسًا. كان البرنامج المرئي مفيدًا للغاية.',
-  'Patagonia Traverse': 'عبور باتاغونيا',
-  'Oaxaca + Chiapas': 'واهاكا + تشياباس',
-  'Copper Canyon Loop': 'حلقة وادي النحاس',
   'Tell us where adventure should take you next.': 'أخبرنا إلى أين يجب أن تأخذك المغامرة القادمة.',
   'Share your goals, dates, and experience level. We turn that into a practical, expert guided plan designed for busy professionals and high-expectation travelers.':
     'شاركنا أهدافك وتواريخك ومستوى خبرتك. نحوّل ذلك إلى خطة عملية بإرشاد خبير، مصمّمة للمحترفين المشغولين والمسافرين أصحاب التوقّعات العالية.',
@@ -1194,6 +1058,7 @@ const DICTS: Record<Exclude<Lang, 'en'>, Dict> = { es, fr, ar }
 type I18nValue = {
   lang: Lang
   dir: 'ltr' | 'rtl'
+  isSwitching: boolean
   setLang: (lang: Lang) => void
   t: (en: string) => string
 }
@@ -1211,6 +1076,8 @@ function getInitialLang(): Lang {
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(getInitialLang)
+  const [isSwitching, setIsSwitching] = useState(false)
+  const switchTimerRef = useRef<number | null>(null)
 
   const dir = useMemo<'ltr' | 'rtl'>(
     () => LANGUAGES.find((l) => l.code === lang)?.dir ?? 'ltr',
@@ -1224,7 +1091,32 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     window.localStorage.setItem(STORAGE_KEY, lang)
   }, [lang, dir])
 
-  const setLang = useCallback((next: Lang) => setLangState(next), [])
+  useEffect(
+    () => () => {
+      if (switchTimerRef.current !== null) {
+        window.clearTimeout(switchTimerRef.current)
+      }
+    },
+    [],
+  )
+
+  const setLang = useCallback(
+    (next: Lang) => {
+      if (next === lang) return
+      setLangState(next)
+      setIsSwitching(true)
+
+      if (switchTimerRef.current !== null) {
+        window.clearTimeout(switchTimerRef.current)
+      }
+
+      switchTimerRef.current = window.setTimeout(() => {
+        setIsSwitching(false)
+        switchTimerRef.current = null
+      }, 260)
+    },
+    [lang],
+  )
 
   const t = useCallback(
     (en: string) => {
@@ -1234,7 +1126,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     [lang],
   )
 
-  const value = useMemo<I18nValue>(() => ({ lang, dir, setLang, t }), [lang, dir, setLang, t])
+  const value = useMemo<I18nValue>(
+    () => ({ lang, dir, isSwitching, setLang, t }),
+    [lang, dir, isSwitching, setLang, t],
+  )
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
 }

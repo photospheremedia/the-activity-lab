@@ -1232,8 +1232,8 @@ function About() {
 
             <div className="group relative mt-10 overflow-hidden rounded-3xl ring-1 ring-forest-950/10">
               <img
-                src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=1200&q=80"
-                alt="A guided trekker on a high mountain ridge trail"
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80"
+                alt="Mountain forest landscape at golden hour"
                 loading="lazy"
                 className="aspect-[16/11] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
               />
@@ -1304,6 +1304,7 @@ function About() {
 function Landing() {
   const appRef = useRef<HTMLDivElement | null>(null)
   const location = useLocation()
+  const { isSwitching } = useI18n()
 
   useEffect(() => {
     if (!location.hash) return
@@ -1349,7 +1350,12 @@ function Landing() {
   }, [])
 
   return (
-    <div ref={appRef}>
+    <div
+      ref={appRef}
+      className={`transition-[opacity,filter] duration-300 ${
+        isSwitching ? 'opacity-80 blur-[0.6px]' : 'opacity-100 blur-0'
+      }`}
+    >
       <Nav />
       <main>
         <Hero />
