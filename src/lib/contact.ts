@@ -1,6 +1,6 @@
 /** Shown on the site (mailto links, “Prefer email?”). */
 export const PUBLIC_CONTACT_EMAIL =
-  import.meta.env.VITE_PUBLIC_CONTACT_EMAIL ?? 'hello@theactivitylab.com'
+  import.meta.env.VITE_PUBLIC_CONTACT_EMAIL ?? 'hello@theactivitylab.xyz'
 
 /** Dev-only fallback when `/api/contact` is unavailable (vite without vercel dev). */
 const DEV_INBOX = import.meta.env.VITE_FORM_INBOX_EMAIL

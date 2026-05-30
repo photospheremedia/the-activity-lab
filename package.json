@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "porkbun:ping": "./scripts/porkbun-api.sh ping",
+    "porkbun:dns": "./scripts/porkbun-api.sh dns",
+    "dns:plan": "python3 scripts/porkbun-dns-activity-lab.py",
+    "dns:apply": "python3 scripts/porkbun-dns-activity-lab.py --apply"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
