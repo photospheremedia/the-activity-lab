@@ -4,8 +4,8 @@ import { useI18n } from './i18n'
 
 const FOOTER_CONTACT = {
   name: 'Salim Spai',
-  phoneTel: '+14387639268',
-  phoneDisplay: '+1 (438) 763-9268',
+  phoneTel: '+14387649261',
+  phoneDisplay: '+1 (438) 764-9261',
 } as const
 
 export function Footer() {
